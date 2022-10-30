@@ -4,10 +4,15 @@ class Api::SessionsController < ApplicationController
 
     if @user
       login!(@user)
-      render: JSON(@user)
+      render json: @user
+    else
+      render json: { errors: ['The provided credentials were invalid.'], status: :unauthorized }
+    end
   end
 
   def destroy
+    logout!
+    render json: { message: 'success' }
   end
 
 end
