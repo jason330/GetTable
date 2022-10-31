@@ -35,6 +35,7 @@ export const loginUser = ({email, password}) => async (dispatch) => {
             password
         })
     });
+    debugger
     const data = await response.json();
     dispatch(setSessionUser(data.user));
     return response;
