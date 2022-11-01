@@ -9,7 +9,7 @@ function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
 
     return (
-        <div className="navContainer">
+        <nav className="navContainer">
             <a href="/">
                 <img src={logo} alt="logo" />
             </a>
@@ -29,7 +29,7 @@ function Navigation() {
                 </>
                 }
             </div>
-        </div>
+        </nav>
     )
 }
 

@@ -1,3 +1,7 @@
 img {
     width: 150px;
 }
+
+menu {
+    list-style: none;
+}
