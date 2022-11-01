@@ -6,22 +6,21 @@ import SignupFormModal from './components/SignupFormModal';
 
 function App() {
   return (
-    // <Switch>
     <>
-      <Route path='/'>
-        <Navigation />
-      </Route>
-      
-      <Route path="/signIn">
-        <LoginFormModal />
-      </Route>
+      <Navigation />
 
-      <Route path='/signUp'>
-        <SignupFormModal />
-      </Route>
+        <Switch>
+      
+          <Route path="/signIn">
+            <LoginFormModal />
+          </Route>
+
+          <Route path='/signUp'>
+            <SignupFormModal />
+          </Route>
     
+        </Switch>
     </>
-    // </Switch>
   );
 }
 

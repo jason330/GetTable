@@ -1,7 +1,61 @@
-img {
-    width: 150px;
+.navContainer {
+    font-family: Lato;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px 0 32px;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    margin-top: 9px;
+    margin-bottom: 9px;
+}
+
+.title {
+    margin-left: 9px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.superscript {
+    font-size: 6px;
+}
+
+img {
+    height: 36px;
+    width: auto;
+}
+
+.buttonContainer {
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 2rem;
+    border-radius: 0.1875rem;
+}
+
+.demoUser {
+    background-color: #da3743;
+    color: #fff;
+    margin: 0 8px;
+    padding: 0 16px;
+}
+
+.signUp {
+    background-color: #247f9e;
+    color: #fff;
+    margin: 0 8px;
+    padding: 0 16px;
+}
+
+.signIn {
+    background-color: initial;
+    color: #2d333f;
+    border: 0.0625rem solid #d8d9db;
+    padding: 0 16px;
+}
 menu {
     list-style: none;
 }

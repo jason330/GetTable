@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../store/session";
-import logo from './opentable-logo-153e80.svg'
+import { loginUser, logout } from "../../store/session";
+import logo from './circlesLogo.png'
 import './Navigation.css'
 import ProfileButton from "./ProfileButton";
 
@@ -10,22 +10,32 @@ function Navigation() {
 
     return (
         <nav className="navContainer">
-            <a href="/">
-                <img src={logo} alt="logo" />
-            </a>
+            <div>
+                <a className="logo" href="/">
+                    <img src={logo} alt="circle image" />
+                    <h2 className="title">GetTable<sup className="superscript">&reg;</sup></h2>
+                </a>
+            </div>
 
             <div className="buttonContainer">
                 {sessionUser &&
                 <>
-                    <ProfileButton/>
+                    <ProfileButton user={sessionUser} />
                     <button onClick={ () => dispatch(logout()) }>Log out</button>
                 </>
                 }
 
                 {!sessionUser &&
                 <>
-                    <a href="/signUp">Sign up</a>
-                    <a href="/signIn">Sign in</a>
+                    <button className="demoUser red" onClick={ () => dispatch(loginUser({email: 'demo@user.io', password: 'password'})) }>Demo User</button>
+                    <a href="/signUp">
+                        <button className="signUp" >Sign up
+                        </button>
+                    </a>
+                    <a href="/signIn">
+                        <button className="signIn">Sign in
+                        </button>
+                    </a>
                 </>
                 }
             </div>

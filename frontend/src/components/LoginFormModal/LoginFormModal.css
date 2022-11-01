@@ -8,7 +8,7 @@ button {
     transition-property: background-color;
 }
 
-button:hover {
+.red:hover {
     cursor: pointer;
     background-color: #b8222d;
 }
