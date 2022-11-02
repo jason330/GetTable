@@ -34,7 +34,7 @@ function LoginForm() {
         <>
             <div className="modalFormContainer">
                 <h2 className="enterEmail">Enter your email</h2>
-                <h3 className="modalMsg">Enter the email associated with your GetTable account, social login or new email. We’ll send a code to that email.
+                <h3 className="modalMsg">Enter the email associated with your GetTable account or social login. We’ll send a code to that email.
                 </h3>
                 <form onSubmit={handleSubmit}>
                     <ul>

@@ -15,9 +15,9 @@ function App() {
             <LoginFormModal />
           </Route> */}
 
-          <Route path='/signUp'>
+          {/* <Route path='/signUp'>
             <SignupFormModal />
-          </Route>
+          </Route> */}
     
         </Switch>
     </>
