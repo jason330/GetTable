@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from "react-router-dom";
-import LoginFormModal from './components/LoginFormModal';
+import LoginFormModal from './components/LoginFormModal/LoginForm';
 import Navigation from './components/Navigation';
 import SignupFormModal from './components/SignupFormModal';
 
@@ -11,9 +11,9 @@ function App() {
 
         <Switch>
       
-          <Route path="/signIn">
+          {/* <Route path="/signIn">
             <LoginFormModal />
-          </Route>
+          </Route> */}
 
           <Route path='/signUp'>
             <SignupFormModal />

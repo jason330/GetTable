@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser, logout } from "../../store/session";
+import LoginFormModal from "../LoginFormModal";
 import logo from './circlesLogo.png'
 import './Navigation.css'
 import ProfileButton from "./ProfileButton";
@@ -21,7 +22,7 @@ function Navigation() {
                 {sessionUser &&
                 <>
                     <ProfileButton user={sessionUser} />
-                    <button onClick={ () => dispatch(logout()) }>Log out</button>
+                    {/* <button onClick={ () => dispatch(logout()) }>Log out</button> */}
                 </>
                 }
 
@@ -32,10 +33,9 @@ function Navigation() {
                         <button className="signUp" >Sign up
                         </button>
                     </a>
-                    <a href="/signIn">
-                        <button className="signIn">Sign in
-                        </button>
-                    </a>
+                    {/* <a href="/signIn"> */}
+                    <LoginFormModal />
+                    {/* </a> */}
                 </>
                 }
             </div>
