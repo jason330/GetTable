@@ -13,7 +13,7 @@ function Navigation() {
         <nav className="navContainer">
             <div>
                 <a className="logo" href="/">
-                    <img src={logo} alt="circle image" />
+                    <img src={logo} alt="circle logo" />
                     <h2 className="title">GetTable<sup className="superscript">&reg;</sup></h2>
                 </a>
             </div>

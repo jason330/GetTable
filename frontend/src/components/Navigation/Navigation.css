@@ -31,7 +31,7 @@ img {
 .buttonContainer {
     padding: 0 16px;
     font-size: 14px;
-    font-weight: 300;
+    /* font-weight: 300; */
     line-height: 2rem;
     border-radius: 0.1875rem;
 }
@@ -55,6 +55,7 @@ img {
     color: #2d333f;
     border: 0.0625rem solid #d8d9db;
     padding: 0 16px;
+    margin-right: 56px;
 }
 menu {
     list-style: none;

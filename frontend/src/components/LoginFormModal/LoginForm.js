@@ -32,30 +32,34 @@ function LoginForm() {
     
     return (
         <>
-            <h2>Enter your email</h2>
-            <h3>Enter the email associated with your GetTable account, social login or new email. We’ll send a code to that email.
-            </h3>
-            <form onSubmit={handleSubmit}>
-                <ul>
-                    {errors.map(error => <li key={error}>{error}</li>)}
-                </ul>
-                <input
-                    type="email"
-                    value={email}
-                    placeholder='Email'
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
+            <div className="modalFormContainer">
+                <h2 className="enterEmail">Enter your email</h2>
+                <h3 className="modalMsg">Enter the email associated with your GetTable account, social login or new email. We’ll send a code to that email.
+                </h3>
+                <form onSubmit={handleSubmit}>
+                    <ul>
+                        {errors.map(error => <li key={error}>{error}</li>)}
+                    </ul>
+                    <input
+                        className="inputField"
+                        type="email"
+                        value={email}
+                        placeholder='Email'
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
 
-                <input
-                    type="password"
-                    value={password}
-                    placeholder='Password'
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-                <button className="button" type="submit">Continue</button>
-            </form>
+                    <input
+                        className="inputField"
+                        type="password"
+                        value={password}
+                        placeholder='Password'
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                    <button className="formSubmitButton red" type="submit">Continue</button>
+                </form>
+            </div>
         </>
     );
 }

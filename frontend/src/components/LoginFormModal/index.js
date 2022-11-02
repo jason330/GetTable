@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Modal } from "../../context/modal";
 import LoginForm from "./LoginForm";
+import closeButton from './closeButton.svg'
 
 function LoginFormModal() {
     const [showModal, setShowModal] = useState(false);
@@ -11,6 +12,9 @@ function LoginFormModal() {
             </button>
             {showModal &&
                 <Modal onClose={ () => setShowModal(false) }>
+                    <button className="closeButton" onClick={ () => setShowModal(false) }>
+                        <img className="closeButtonImg" src={closeButton} alt="close button" />
+                    </button>
                     <LoginForm />
                 </Modal>
             }

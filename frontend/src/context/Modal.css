@@ -21,6 +21,9 @@
 #modal-content {
     position: absolute;
     background-color: #fff;
-    min-height: calc(48.0625rem - 96px);
-    padding: 48px 32px;
+    border-radius: 4px;
+    width: 443.2px;
+    height: 73vh;
+    /* min-height: calc(48.0625rem - 96px); */
+    padding: 72px 32px 48px;
 }

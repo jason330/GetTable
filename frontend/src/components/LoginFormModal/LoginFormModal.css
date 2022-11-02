@@ -1,14 +1,66 @@
-button {
-    background-color: #da3743;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    transition-duration: 0.3s;
-    transition-property: background-color;
+.closeButton {
+    margin: 32px 16px 16px;
+    padding: 0;
+    background-color: initial;
+    position: absolute;
+    top: 0;
+    right: 16px;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
-.red:hover {
-    cursor: pointer;
-    background-color: #b8222d;
+.closeButtonImg {
+    height: inherit;
+    width: inherit;
+}
+
+.modalFormContainer {
+    /* display: block; */
+    /* padding-top: 4.5rem; */
+    /* padding: 48px 32px; */
+}
+
+.enterEmail {
+    font-family: 'Lato';
+    margin: 0px 0px 4px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+}
+
+.modalMsg {
+    margin: 4px 0px 32px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    /* margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px; */
+}
+
+form {
+    font-family: 'Lato';
+}
+
+.inputField {
+    /* display: block; */
+    /* flex: 0 0 auto; */
+    width: 100%;
+    padding: 0.75rem 8px;
+    margin-bottom: 16px;
+    border: 0.0625rem solid rgb(216, 217, 219);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.inputField:hover {
+    border-color: rgb(45, 51, 63);
+}
+
+.formSubmitButton {
+    height: 3rem;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
 }
