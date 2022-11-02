@@ -1,12 +1,12 @@
 databases:
-  - name: getTable
-    user: getTable
+  - name: get-table
+    user: get-table
     plan: free
     region: oregon
 
 services:
   - type: web
-    name: getTable
+    name: get-table
     plan: free
     region: oregon
     branch: main
@@ -16,7 +16,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: getTable
+          name: get-table
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
