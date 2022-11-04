@@ -11,12 +11,18 @@ function RestaurantIndexPage() {
     // console.log(restaurantsArray, "hello yo")
     useEffect( () => {
         dispatch(fetchRestaurants())
-    },[])
+    },[dispatch])
 
     return(
-        <div>Restaurant Index Page
-            <RestaurantList restaurantsArray={restaurantsArray} />
-        </div>
+        <>
+            <section>
+                <h1 className="sectionText">Find your table for any occasion</h1>
+            </section>
+            <div>
+                <RestaurantList restaurantsArray={restaurantsArray} />
+            </div>
+        
+        </>
     )
 }
 

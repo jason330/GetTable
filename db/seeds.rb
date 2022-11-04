@@ -46,9 +46,21 @@ ApplicationRecord.transaction do
         cuisine: Faker::Restaurant.type,
         opening_hour: [11, 12, 4, 5].sample,
         closing_hour: [9, 10, 11, 12].sample,
-        reservation_interval: [15, 30].sample
+        reservation_interval: [15, 30].sample        
       }) 
     end
+
+    picRestaurant = Restaurant.create!({
+        name: Faker::Restaurant.name,
+        description: Faker::Restaurant.description,
+        location: ['San Francisco', 'Oakland', 'San Jose', 'Marin', 'San Mateo', 'Walnut Creek'].sample,
+        cuisine: Faker::Restaurant.type,
+        opening_hour: [11, 12, 4, 5].sample,
+        closing_hour: [9, 10, 11, 12].sample,
+        reservation_interval: [15, 30].sample,
+      })
+      # file = URI.open("https://gettableproject.s3.us-west-1.amazonaws.com/steak.jpeg")
+      # picRestaurant.photo.attach(io: file, filename: "default")
 
     puts "Done!"
 end

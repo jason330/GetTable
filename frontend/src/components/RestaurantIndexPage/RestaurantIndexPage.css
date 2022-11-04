@@ -1,0 +1,78 @@
+section {
+    background: linear-gradient(.647turn,#1a0a47cc,#0d1b4599 .01%,#0d1b45cc 51.04%,#0d1b45 99.1%);
+    min-height: 20rem;
+    font-family: 'Lato';
+    display: flex;
+    justify-content: center;
+}
+
+.sectionText {
+    color: #fff;
+    font-size: 45px;
+    font-weight: 700;
+    /* line-height: 56px; */
+    /* margin: 0 0 16px; */
+    position: absolute;
+    top: 150px
+}
+
+.restaurantListItemContainer {
+    margin-right: 8px;
+    width: 236px;
+}
+
+.restaurantIndexContainer {
+    border: 1px solid #d8d9db;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: all;
+    width: 100%;
+}
+
+.restaurantIndexContainer:hover {
+    box-shadow: 0 2px 4px #2d333f33;
+    transform: translateY(-6px);
+}
+
+.restaurantIndexImg {
+    min-height: 132px;
+    width: 100%;
+}
+
+.restaurantIndexTxtContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+
+.restaurantIndexName {
+    /* color: #2d333f; */
+    margin: 0 0 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+}
+
+.restaurantIndexTypeContainer {
+    /* display: block; */
+
+    font-family: 'Lato';
+    font-size: .875rem;
+    /* font-weight: 400; */
+    line-height: 1.25rem;
+    color: #2d333f;
+    margin: 0 0 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
