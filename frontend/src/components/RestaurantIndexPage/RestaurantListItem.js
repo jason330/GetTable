@@ -4,9 +4,9 @@ function RestaurantListItem( {restaurant, key} ) {
     console.log(restaurant, "restaurant consoled")
     return(
         <li className="restaurantListItemContainer">
-            <a href={`/api/restaurant/${restaurant.id}`}>
+            <a href={`/restaurants/${restaurant.id}`}>
                 <div className="restaurantIndexContainer">
-                    <img className='restaurantIndexImg' src='small-steak.jpeg' alt="steak" />
+                    <img className='restaurantIndexImg' src='./small-steak.jpeg' alt="steak" />
                     <div className='restaurantIndexTxtContainer'>
                         <h3 className='restaurantIndexName'>
                             {restaurant.name}

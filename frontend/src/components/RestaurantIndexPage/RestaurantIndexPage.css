@@ -16,6 +16,22 @@ section {
     top: 150px
 }
 
+.restaurantsArrayContainer {
+    /* line-height: 1.15; */
+    margin-top: 48px;
+    /* margin: 0 0 16px; */
+    margin-bottom: 16px;
+    padding-top: 0;
+    padding-bottom: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+    border-bottom: 0.0625rem solid #d8d9db;
+}
+
+.restaurantsArrayTitle {
+    font-family: 'Lato';
+}
+
 .restaurantListItemContainer {
     margin-right: 8px;
     width: 236px;

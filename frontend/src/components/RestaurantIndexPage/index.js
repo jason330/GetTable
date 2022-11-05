@@ -18,7 +18,8 @@ function RestaurantIndexPage() {
             <section>
                 <h1 className="sectionText">Find your table for any occasion</h1>
             </section>
-            <div>
+            <div className="restaurantsArrayContainer">
+                <h2 className="restaurantsArrayTitle">Popular restaurants in San Francisco</h2>
                 <RestaurantList restaurantsArray={restaurantsArray} />
             </div>
         

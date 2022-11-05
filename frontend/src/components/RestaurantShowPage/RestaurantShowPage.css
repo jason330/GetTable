@@ -1,0 +1,54 @@
+.restaurantShowImg {
+    height: 296px;
+    width: 100%;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+    /* animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running; */
+    animation-name: img;
+}
+
+.restaurantShowMainContainer {
+    font-family: 'Lato';
+    padding: 0 32px 124px;
+    /* margin-top: -51px; */
+    /* background-color: #fff; */
+    border-radius: 4px;
+    /* box-sizing: border-box; */
+    /* position: relative; */
+    /* padding: 0 16px calc(128px - 0.25rem); */
+}
+
+.restaurantShowName {
+    padding: 32px 0;
+    border-bottom: 0.0625rem solid #d8d9db;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 3.5rem;
+}
+
+.restaurantShowDetails {
+    display: flex;
+    align-items: center;
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+}
+
+.utensilIconContainer {
+    /* display: inline-block; */
+    /* display: inline-grid; */
+    /* align-items: center; */
+    margin-top: 16px;
+    margin-right: 4px;
+}
+
+.restaurantShowDescription {
+    margin-top: 32px;
+    line-height: 24px;
+    /* font-weight: 500; */
+    /* font-size: 14px; */
+}
