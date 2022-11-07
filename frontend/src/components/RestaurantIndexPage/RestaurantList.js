@@ -1,18 +1,17 @@
 import RestaurantListItem from "./RestaurantListItem"
 
-function RestaurantList( {restaurantsArray} ) {
-    console.log(restaurantsArray, "restaurantsArry consoled")
+export default function RestaurantList( {restaurantsArray} ) {
+
     const listItems = restaurantsArray.map(restaurant =>
         <RestaurantListItem
             key={restaurant.id}
             restaurant={restaurant}
         />
     )
+
     return(
-        <ul>
+        <ul className="restaurantListContainer">
             {listItems}
         </ul>
     )
 }
-
-export default RestaurantList

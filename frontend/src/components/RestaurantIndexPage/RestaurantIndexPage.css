@@ -19,16 +19,17 @@
 
 .restaurantsMainContainer {
     /* display: flex; */
+    /* display: block; */
     /* min-height: 2.25rem; */
     /* line-height: 1.15; */
     margin-top: 48px;
     /* margin: 0 0 16px; */
     margin-bottom: 16px;
-    padding-top: 0;
+    /* padding-top: 0; */
+    padding-top: 8px;
     padding-bottom: 16px;
     padding-left: 32px;
     padding-right: 32px;
-    
 }
 
 .restaurantsArrayTitle {
@@ -44,9 +45,25 @@
     /* margin-bottom: 0.25rem; */
 }
 
+.restaurantListContainer {
+    display: flex;
+    flex-wrap: wrap;
+    /* overflow-x: auto; */
+    white-space: nowrap;
+    /* margin-block: 0; */
+    /* padding: 0; */
+    /* margin: 0; */
+    /* z-index: 0; */
+    /* transition: transform .8s cubic-bezier(.77,0,.175,1); */
+}
+
 .restaurantListItemContainer {
-    margin-right: 8px;
+    margin-right: 16px;
+    margin-bottom: 48px;
     width: 236px;
+    flex-shrink: 0;
+    /* display: flex; */
+    /* border: 1px solid #d8d9db; */
 }
 
 .restaurantIndexContainer {
@@ -74,6 +91,7 @@
 .restaurantIndexImg {
     min-height: 132px;
     width: 100%;
+
 }
 
 .restaurantIndexTxtContainer {
@@ -92,8 +110,6 @@
 }
 
 .restaurantIndexTypeContainer {
-    /* display: block; */
-
     font-family: 'Lato';
     font-size: .875rem;
     /* font-weight: 400; */
