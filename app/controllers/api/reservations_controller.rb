@@ -1,4 +1,6 @@
 class Api::ReservationsController < ApplicationController
+  wrap_parameters include: Reservation.attribute_names + ['userId','restaurantId','date','time','partySize']
+
   def create
     @reservation = Reservation.new(reservation_params)
 

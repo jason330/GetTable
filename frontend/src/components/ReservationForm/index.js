@@ -1,5 +1,7 @@
 import { useState } from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { useParams } from "react-router-dom/cjs/react-router-dom.min"
+import { createReservation } from "../../store/reservations"
 
 function ReservationForm() {
     const dispatch = useDispatch()
@@ -7,13 +9,36 @@ function ReservationForm() {
     const [date, setDate] = useState()
     const [time, setTime] = useState()
     const [errors, setErrors] = useState([])
-
-    const handleSubmit = ( () => {
-        
+    const sessionUser = useSelector(state => state.session.user);
+    const userId = sessionUser.id
+    const {restaurantId} = useParams();
+    
+    const handleSubmit = ( (e) => {
+        e.preventDefault();
+        setErrors([]);
+        // debugger
+        return dispatch(createReservation({
+            userId,
+            restaurantId,
+            date,
+            time,
+            partySize
+        }))
+            .catch(async (res) => {
+                let data;
+                try {
+                    data = await res.clone().json();
+                } catch {
+                    data = await res.text(); // Will hit this case if the server is down
+                }
+                if (data?.errors) setErrors(data.errors);
+                else if (data) setErrors([data]);
+                else setErrors([res.statusText]);
+            })
     })
 
     return(
-        <form action={handleSubmit}>Make a reservation
+        <form onSubmit={handleSubmit}>Make a reservation
             <label>Party Size
                 <select
                     name="partySize"
@@ -69,7 +94,7 @@ function ReservationForm() {
                     <option value="11:00 PM">11:00 PM</option>
                     <option value="11:30 PM">11:30 PM</option>
                 </select>
-                <button type="button">Complete reservation</button>
+                <button type="submit">Complete reservation</button>
             </div>
         </form>
     )

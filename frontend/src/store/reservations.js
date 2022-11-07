@@ -1,17 +1,40 @@
-const SET_RESERVATION = 'reservations/setReservation'
+import csrfFetch from "./csrf"
 
-const setReservation = ( reservation ) => {
+const ADD_RESERVATION = 'reservations/addReservation'
+
+const addReservation = ( reservation ) => {
     return {
-        type: SET_RESERVATION,
-        reservation
+        type: ADD_RESERVATION,
+        payload: reservation
     }
 }
 
-export const createReservation = (reservationId) => async (dispatch) => {
-
+export const createReservation = ({
+    userId,
+    restaurantId,
+    date,
+    time,
+    partySize}) => async (dispatch) => {
+        const response = await csrfFetch('/api/reservations', {
+            method: 'POST',
+            body: JSON.stringify({
+                userId,
+                restaurantId,
+                date,
+                time,
+                partySize
+            })
+        });
+        const data = await response.json();
+        dispatch(addReservation(data.reservation));
+        return response;
 }
+
 export default function reservationReducer( initialState = {}, action ) {
     switch (action.type) {
-        case 
+        case ADD_RESERVATION:
+            return { ...initialState, [action.payload.id]: action.payload };
+        default:
+            return initialState
     }
 }

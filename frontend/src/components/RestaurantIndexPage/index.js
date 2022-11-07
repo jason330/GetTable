@@ -8,20 +8,24 @@ function RestaurantIndexPage() {
     const dispatch = useDispatch()
     const allRestaurants = useSelector( state => state.restaurants )
     const restaurantsArray = Object.values(allRestaurants)
-    // console.log(restaurantsArray, "hello yo")
+    
     useEffect( () => {
         dispatch(fetchRestaurants())
     },[dispatch])
 
     return(
         <>
-            <section>
+            <section className="mainTextContainer">
                 <h1 className="sectionText">Find your table for any occasion</h1>
             </section>
-            <div className="restaurantsArrayContainer">
-                <h2 className="restaurantsArrayTitle">Popular restaurants in San Francisco</h2>
-                <RestaurantList restaurantsArray={restaurantsArray} />
-            </div>
+            <section className="restaurantsMainContainer">
+                <div>
+                    <h2 className="restaurantsArrayTitle">Popular restaurants in San Francisco</h2>
+                </div>
+                <div >
+                    <RestaurantList restaurantsArray={restaurantsArray} />
+                </div>
+            </section>
         
         </>
     )

@@ -1,6 +1,7 @@
-section {
+.mainTextContainer {
     background: linear-gradient(.647turn,#1a0a47cc,#0d1b4599 .01%,#0d1b45cc 51.04%,#0d1b45 99.1%);
-    min-height: 20rem;
+    /* min-height: 20rem; */
+    height: 248px;
     font-family: 'Lato';
     display: flex;
     justify-content: center;
@@ -16,7 +17,9 @@ section {
     top: 150px
 }
 
-.restaurantsArrayContainer {
+.restaurantsMainContainer {
+    /* display: flex; */
+    /* min-height: 2.25rem; */
     /* line-height: 1.15; */
     margin-top: 48px;
     /* margin: 0 0 16px; */
@@ -25,11 +28,20 @@ section {
     padding-bottom: 16px;
     padding-left: 32px;
     padding-right: 32px;
-    border-bottom: 0.0625rem solid #d8d9db;
+    
 }
 
 .restaurantsArrayTitle {
     font-family: 'Lato';
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d333f;
+    min-height: 2.25rem;
+    line-height: 2rem;
+    padding-bottom: 16px;
+    border-bottom: 0.0625rem solid #d8d9db;
+    margin-bottom: 16px;
+    /* margin-bottom: 0.25rem; */
 }
 
 .restaurantListItemContainer {
