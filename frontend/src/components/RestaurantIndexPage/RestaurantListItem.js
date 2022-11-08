@@ -16,6 +16,7 @@ function RestaurantListItem( {restaurant, key} ) {
                             {restaurant.cuisine}
                             {restaurant.location}
                         </div>
+                        <button className="formSubmitButton red">Find a time</button>
                     </div>
 
                 </div>

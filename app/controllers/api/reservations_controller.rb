@@ -1,5 +1,17 @@
 class Api::ReservationsController < ApplicationController
-  wrap_parameters include: Reservation.attribute_names + ['userId','restaurantId','date','time','partySize']
+  wrap_parameters include: Reservation.attribute_names + ['userId','restaurantId','reservationDate','reservationTime','partySize']
+
+  before_action :require_logged_in, only: [:update, :destroy]
+
+  def show
+    @reservation = Reservation.find_by(id: params[:id])
+
+    if @reservation
+      render :show
+    else
+      render json: { errors: @reservation.errors.full_messages }, status: 404
+    end
+  end
 
   def create
     @reservation = Reservation.new(reservation_params)

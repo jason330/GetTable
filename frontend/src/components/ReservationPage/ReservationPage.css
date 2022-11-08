@@ -1,0 +1,27 @@
+.reservationMainContainer {
+    /* display: flex;
+    justify-content: center; */
+}
+
+.reservationConfMessageContainer {
+
+}
+
+.reservationConfTxt {
+
+}
+
+.reservationDetailsContainer {
+
+}
+
+.reservationUpdateLinkContainer {
+    text-decoration: none;
+    color: #da3743;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    border-right: 0.0625rem solid #d8d9db;
+    margin-right: 8px;
+    padding-right: 8px;
+}
