@@ -19,11 +19,13 @@ function RestaurantIndexPage() {
                 <h1 className="sectionText">Find your table for any occasion</h1>
             </section>
             <section className="restaurantsMainContainer">
-                <div>
-                    <h2 className="restaurantsArrayTitle">Popular restaurants in San Francisco</h2>
-                </div>
-                <div>
-                    <RestaurantList restaurantsArray={restaurantsArray} />
+                <div className="restaurantsMainSubContainer">
+                    <div>
+                        <h2 className="restaurantsArrayTitle">Popular restaurants in San Francisco</h2>
+                    </div>
+                    <div>
+                        <RestaurantList restaurantsArray={restaurantsArray} />
+                    </div>
                 </div>
             </section>
         
