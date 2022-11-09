@@ -1,7 +1,7 @@
 import './RestaurantIndexPage.css'
 
-function RestaurantListItem( {restaurant, key} ) {
-    console.log(restaurant, "restaurant consoled")
+function RestaurantListItem( {restaurant} ) {
+
     return(
         <li className="restaurantListItemContainer">
             <a href={`/restaurants/${restaurant.id}`}>
@@ -14,9 +14,9 @@ function RestaurantListItem( {restaurant, key} ) {
                         <div className='restaurantIndexReviewContainer'></div>
                         <div className='restaurantIndexTypeContainer'>
                             {restaurant.cuisine}
-                            {restaurant.location}
+                            <span className='restaurantIndexLocation'>{restaurant.location}</span>                            
                         </div>
-                        <button className="formSubmitButton red">Find a time</button>
+                        <button className="restaurantIndexButton">Find a time</button>
                     </div>
 
                 </div>

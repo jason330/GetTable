@@ -1,5 +1,6 @@
 import csrfFetch from "./csrf";
 import { GET_RESERVATION } from "./reservations";
+import { SET_USER } from "./user";
 
 const SET_RESTAURANTS = 'restaurants/setRestaurants'
 const SET_RESTAURANT = 'restaurants/setRestaurant'
@@ -40,6 +41,8 @@ export default function restaurantReducer( initialState = {}, action ) {
             return { ...initialState, [action.payload.id]: action.payload}
         case GET_RESERVATION:
             return { ...initialState, [action.payload.restaurant.id]: action.payload.restaurant}
+        case SET_USER:
+            return { ...initialState, ...action.payload.restaurants }
         default:
             return initialState;
     }

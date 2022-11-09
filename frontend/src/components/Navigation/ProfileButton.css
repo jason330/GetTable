@@ -1,0 +1,48 @@
+.profileButton {
+    color: #2d333f;
+    /* font-size: 16px; */
+    /* margin: 0 4px; */
+    /* outline: none; */
+    /* padding: 0; */
+    /* position: relative; */
+    /* background-color: initial; */
+    /* border: 0; */
+    /* height: 100%; */
+    /* text-transform: none; */
+    /* overflow: visible; */
+    /* line-height: 1.15; */
+    /* position: absolute; */
+
+    /* display: flex; */
+    /* font-size: 1rem; */
+
+    /* font-size: 14px; */
+    /* font-weight: 300; */
+}
+
+.profileIconImage {
+    /* align-items: center; */
+    background-color: #fff8eb;
+    border: 0.0625rem solid #fdc958;
+    border-radius: 6.25rem;
+    /* border-radius: 0.1875rem; */
+    /* display: flex; */
+    /* padding: 4px 0.375rem; */
+    padding: 0 16px;
+    /* font-size: 1rem; */
+    /* font-weight: 500; */
+    /* line-height: 1.5rem; */
+    /* color: #2d333f; */
+    display: inline-block;
+    height: 1.5rem;
+    /* line-height: 2rem; */
+    /* line-height: 1; */
+    /* min-width: 1.5rem; */
+    /* width: 1.5rem; */
+    /* color: #2d333f; */
+    /* text-transform: none; */
+    /* overflow: hidden; */
+    /* font-size: 0; */
+    /* transform-origin: 0px 0px; */
+
+}

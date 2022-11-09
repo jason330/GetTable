@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { logout } from '../../store/session'
 import userIcon from './userLogo.svg'
+import './ProfileButton.css'
 
 function ProfileButton( {user} ) {
     const dispatch = useDispatch()
@@ -31,14 +32,14 @@ function ProfileButton( {user} ) {
 
     return (
         <>
-            <button onClick={ () => setShowMenu(showMenu ? false : true) } >
-                <img className="profileButton" src={userIcon} alt="user profile button" />
+            <button className='profileButton' onClick={ () => setShowMenu(showMenu ? false : true) } >
+                <img className="profileIconImage" src={userIcon} alt="user profile button" />
             </button>
             {showMenu &&
             <menu>
                 <li>Hello {user.username ? user.username : user.email}!</li>
 
-                <li><button>My Reservations</button></li>
+                <li><a href="/user">My Reservations</a></li>
                 <li><button onClick={signOut}>Sign Out</button></li>
             </menu>}
         </>

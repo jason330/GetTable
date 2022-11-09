@@ -19,7 +19,7 @@ function Navigation() {
                 </a>
             </div>
 
-            <div className="buttonContainer">
+            <div className="buttonAndMenuContainer">
                 {sessionUser &&
                 <>
                     <ProfileButton user={sessionUser} />

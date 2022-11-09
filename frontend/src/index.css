@@ -61,9 +61,9 @@ input[type="submit"] {
 }
 
 button {
-  background-color: #da3743;
+  /* background-color: #da3743; */
   color: #fff;
-  border: none;
+  /* border: none; */
   border-radius: 4px;
   font-size: 16px;
   transition-duration: 0.3s;

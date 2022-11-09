@@ -9,7 +9,7 @@ class Api::ReservationsController < ApplicationController
     if @reservation
       render :show
     else
-      render json: { errors: @reservation.errors.full_messages }, status: 404
+      render json: { errors: 'Sorry the page you were looking for was not found.' }, status: 404
     end
   end
 
@@ -25,9 +25,22 @@ class Api::ReservationsController < ApplicationController
   end
 
   def update
+    @reservation = Reservation.find_by(id: params[:id])
+
+    if @reservation.update(reservation_params)
+      render :update
+    else
+      render json: { errors: @reservation.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def destroy
+    @reservation = Reservation.find(params[:id])
+    
+    if @reservation.destroy
+      render json: { message: 'Reservation cancelled'}
+    end
+
   end
 
   private

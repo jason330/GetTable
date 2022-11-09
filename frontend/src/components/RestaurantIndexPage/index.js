@@ -21,14 +21,13 @@ function RestaurantIndexPage() {
             <section className="restaurantsMainContainer">
                 <div className="restaurantsMainSubContainer">
                     <div>
-                        <h2 className="restaurantsArrayTitle">Popular restaurants in San Francisco</h2>
+                        <h2 className="restaurantsArrayTitle">Popular restaurants in the San Francisco Bay Area</h2>
                     </div>
                     <div>
                         <RestaurantList restaurantsArray={restaurantsArray} />
                     </div>
                 </div>
-            </section>
-        
+            </section>        
         </>
     )
 }

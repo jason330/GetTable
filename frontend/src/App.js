@@ -3,9 +3,11 @@ import { Route, Switch } from "react-router-dom";
 import LoginFormModal from './components/LoginFormModal/LoginForm';
 import Navigation from './components/Navigation';
 import ReservationPage from './components/ReservationPage';
+import ReservationUpdatePage from './components/ReservationUpdatePage';
 import RestaurantIndexPage from './components/RestaurantIndexPage';
 import RestaurantShowPage from './components/RestaurantShowPage';
 import SignupFormModal from './components/SignupFormModal';
+import UserPage from './components/UserPage';
 
 function App() {
   return (
@@ -30,8 +32,16 @@ function App() {
             <SignupFormModal />
           </Route> */}
     
-          <Route path='/reservations/:reservationId'>
+          <Route exact path='/reservations/:reservationId'>
             <ReservationPage />
+          </Route>
+
+          <Route exact path='/reservations/modify/:reservationId'>
+            <ReservationUpdatePage />
+          </Route>
+
+          <Route path='/user' >
+            <UserPage />
           </Route>
 
           <Route path='/'>

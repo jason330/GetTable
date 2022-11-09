@@ -28,12 +28,20 @@ img {
     width: auto;
 }
 
-.buttonContainer {
-    padding: 0 16px;
-    font-size: 14px;
-    /* font-weight: 300; */
-    line-height: 2rem;
-    border-radius: 0.1875rem;
+.buttonAndMenuContainer {
+    align-items: center;
+    display: flex;
+    /* display: block; */
+    /* height: 100%; */
+    /* opacity: 1; */
+    /* transition: opacity .4s ease-in-out; */
+    /* text-size-adjust: 100%; */
+    color: #2d333f;
+    line-height: 1.15;
+    /* box-sizing: border-box; */
+    /* position: relative; */
+    flex-direction: column;
+    /* justify-content: center; */
 }
 
 .demoUser {
