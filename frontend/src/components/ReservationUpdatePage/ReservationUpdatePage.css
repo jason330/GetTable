@@ -1,0 +1,72 @@
+.reservModifyMainContainer {
+    font-family: 'Lato';
+    padding: 32px 32px 5rem;
+    margin: 32px 0;
+}
+
+.reservModifyHeader {
+    margin-bottom: 16px;
+    font-weight: 700;
+    line-height: 1.5rem;
+    color: #2d333f;
+}
+
+.reservModifyCurrentResContainer {
+    display: flex;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 0.0625rem solid #d8d9db;
+}
+
+.reservModifyImage {
+    margin-right: 16px;
+    border-radius: 4px;
+    height: 4rem;
+}
+
+.reservModifyCurrentResText{
+    display: flex;
+    flex-direction: column;
+}
+
+.reservModifyRestaurantName {
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #2d333f;
+}
+
+.reservModifyCurrentDetails {
+    display: flex;
+    flex-wrap: wrap;
+    color: #2d333f;
+}
+
+.reservModifyCurrentDT {
+    display: flex;
+    align-items: center;
+    margin-right: 24px;
+    margin-top: 8px;
+}
+
+.reservModifyIcon {
+    height: 1.5rem;
+}
+
+.reservModifyCurr {
+    font-size: 16px;
+    /* font-weight: 500; */
+    margin: 0 0.5rem;
+}
+
+.reservModifyPartyContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.reservModifyText {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    line-height: 1.5rem;
+}

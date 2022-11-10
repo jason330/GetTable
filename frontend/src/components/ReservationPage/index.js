@@ -5,6 +5,7 @@ import personIcon from './personIcon.svg'
 import calendar from './calendar.svg'
 import { destroyReservation, fetchReservation } from "../../store/reservations";
 import React, { useEffect, useState } from "react";
+import './ReservationPage.css'
 
 export default function ReservationPage() {
     const dispatch = useDispatch()
@@ -42,26 +43,30 @@ export default function ReservationPage() {
     }
 
     return(
-        <main className="reservationMainContainer">
-            <section>
-                <img src="" alt="" />
+        <main>
+            <section className="reservationMainContainer">
+                <img className="reservImage" src="https://images.otstatic.com/prod1/47955298/3/small.jpg" alt="" />
                 <div>
-                    <h1>{restaurant.name}</h1>
+                    <h1 className="reservRestaurantName">{restaurant.name}</h1>
                     <div className="reservationConfMessageContainer">
                         {!cancelled &&
-                        <img src={greenCheck} alt="" />}
-                        <h2 className="reservationConfTxt">Reservation {!cancelled ? 'confirmed' : 'cancelled.'}</h2>
+                        <img className="greenCheckImage" src={greenCheck} alt="" />}
+                        <h2>Reservation {!cancelled ? 'confirmed' : 'cancelled.'}</h2>
                     </div>
                     <div className="reservationDetailsContainer">
-                        <img src={personIcon} alt="" />
-                        <h2>{reservation.partySize}</h2>
-                        <img src={calendar} alt="" />
-                        <h2>{reservation.reservationDate} at {reservation.reservationTime}</h2>
+                        <div className="reservPartySizeContainer">
+                            <img className="reservIcon" src={personIcon} alt="" />
+                            <h2>{reservation.partySize}</h2>
+                        </div>
+                        <div className="reservDateTimeContainer">
+                            <img className="reservIcon" src={calendar} alt="" />
+                            <h2>{reservation.reservationDate} at {reservation.reservationTime}</h2>
+                        </div>
                     </div>
                     {!cancelled &&
                     <div className="reservationUpdateLinkContainer">
-                        <a href={`/reservations/modify/${reservation.id}`}>Modify</a>
-                        <h2 onClick={handleCancel}>Cancel</h2>
+                        <a className="reservModifyLink" href={`/reservations/modify/${reservation.id}`}>Modify</a>
+                        <h2 className="reservCancelLink" onClick={handleCancel}>Cancel</h2>
                     </div>}
                 </div>
             </section>

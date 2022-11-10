@@ -37,11 +37,12 @@ img {
     /* transition: opacity .4s ease-in-out; */
     /* text-size-adjust: 100%; */
     color: #2d333f;
-    line-height: 1.15;
+    /* line-height: 1.15; */
     /* box-sizing: border-box; */
     /* position: relative; */
     flex-direction: column;
     /* justify-content: center; */
+    /* margin-right: 72px; */
 }
 
 .demoUser {

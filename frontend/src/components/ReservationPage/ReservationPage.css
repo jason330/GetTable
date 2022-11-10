@@ -1,27 +1,75 @@
 .reservationMainContainer {
-    /* display: flex;
-    justify-content: center; */
+    display: flex;
+    /* justify-content: center; */
+    padding: 0 32px;
+    /* border: 0.0625rem solid #d8d9db; */
+    /* border-radius: 4px; */
+    margin: 32px auto 5rem;
+    /* margin-bottom: 16px; */
+    /* margin: 32px 32px 0; */
+    font-family: 'Lato';
+    line-height: 1.5rem;
 }
 
+.reservImage {
+    margin-right: 16px;
+    border-radius: 4px;
+    height: 7.75rem;
+}
+
+.reservRestaurantName {
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 28px;
+    color: #2d333f;
+}
 .reservationConfMessageContainer {
-
+    display: flex;
+    margin-top: 8px;
+    color: #2d333f;
 }
 
-.reservationConfTxt {
-
+.greenCheckImage {
+    margin-right: 4px;
+    height: 1.5rem;
 }
 
 .reservationDetailsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    color: #2d333f;
+}
 
+.reservPartySizeContainer {
+    display: flex;
+    margin-right: 8px;
+    margin-top: 8px;
+}
+
+.reservIcon {
+    margin-right: 4px;
+    height: 1.5rem;
+}
+
+.reservDateTimeContainer {
+    display: flex;
+    margin-top: 8px;
 }
 
 .reservationUpdateLinkContainer {
+    display: flex;
     text-decoration: none;
     color: #da3743;
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.5rem;
+    margin-top: 8px;
+}
+.reservModifyLink {
     border-right: 0.0625rem solid #d8d9db;
-    margin-right: 8px;
     padding-right: 8px;
+    margin-right: 8px;
+}
+
+.reservCancelLink{
+    padding-right: 8px;
+    margin-right: 8px;
+    cursor: pointer;
 }

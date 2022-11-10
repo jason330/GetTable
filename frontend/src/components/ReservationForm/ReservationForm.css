@@ -1,0 +1,74 @@
+.reservFormTitle {
+    border-bottom: 0.0625rem solid #d8d9db;
+    color: #2d333f;
+    padding-bottom: 0.75rem;
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+}
+
+.reservForm {
+    margin-top: 16px;
+}
+
+.partySizeContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.partySizeLabel {
+    font-size: 14px;
+}
+
+.partySizeSelect {
+    height: 3rem;
+    cursor: pointer;
+    border-width: 0;
+    font-size: 14px;
+    color: #2d333f;
+    border-bottom: 0.0625rem solid #d8d9db;
+}
+
+.reservationFormDateTimeLabelsContainer {
+    margin-top: 8px;
+    display: flex;
+}
+
+.reservFormDateTime {
+    width: 50%;
+    font-size: 14px;
+}
+
+.reservationFormDateTimeContainer {
+    /* display: flex; */
+}
+
+.reservFormDate {
+    width: 50%;
+    height: 3rem;
+    font-size: 14px;
+    color: #2d333f;
+    cursor: pointer;
+    line-height: 24px;
+    border-bottom: 0.0625rem solid #d8d9db;
+}
+
+.reservFormTime {
+    width: 50%;
+    height: 3rem;
+    font-size: 14px;
+    color: #2d333f;
+    cursor: pointer;
+    border: 0;
+    padding-bottom: 1px;
+    border-bottom: 0.0625rem solid #d8d9db;
+}
+
+.reservFormButton {
+    background-color: #da3743;
+    height: 3rem;
+    width: 100%;
+    margin-top: 16px;
+    text-align: center;
+}

@@ -10,7 +10,7 @@ const setUser = (payload) => {
 }
 
 export const fetchUser = ( userId ) => async (dispatch) => {
-    debugger
+    // debugger
     const res = await csrfFetch(`/api/users/${userId}`)
     const data = await res.json();
     dispatch(setUser(data))

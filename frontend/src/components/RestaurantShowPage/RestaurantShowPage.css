@@ -14,12 +14,14 @@
 .restaurantShowMainContainer {
     font-family: 'Lato';
     padding: 0 32px 124px;
-    /* margin-top: -51px; */
-    /* background-color: #fff; */
+    /* padding: 0 16px 16px; */
     border-radius: 4px;
+    display: block;
     /* box-sizing: border-box; */
+    /* justify-content: center; */
     /* position: relative; */
     /* padding: 0 16px calc(128px - 0.25rem); */
+    color: #2d333f;
 }
 
 .restaurantShowName {
@@ -33,22 +35,37 @@
 .restaurantShowDetails {
     display: flex;
     align-items: center;
+    /* margin-top: 16px; */
     font-size: .875rem;
     font-weight: 500;
     line-height: 1.25rem;
+    /* color: #2d333f; */
 }
 
 .utensilIconContainer {
-    /* display: inline-block; */
-    /* display: inline-grid; */
-    /* align-items: center; */
+    display: flex;
+    align-items: center;    
     margin-top: 16px;
+}
+
+.utensilIcon {
     margin-right: 4px;
+    height: 1.5rem;
 }
 
 .restaurantShowDescription {
     margin-top: 32px;
     line-height: 24px;
+
     /* font-weight: 500; */
     /* font-size: 14px; */
+}
+
+.reservationFormContainer {
+    /* display: block; */
+    margin-top: 32px;
+    /* line-height: 1.15; */
+    border-radius: 4px;
+    box-shadow: 0 2px 4px #2d333f33;
+    padding: 16px;
 }

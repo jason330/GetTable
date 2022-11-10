@@ -28,13 +28,14 @@ function RestaurantShowPage() {
                 </h1>
                 <div className="restaurantShowDetails">
                     <div className="utensilIconContainer">
-                        <img src={utensilIcon} alt="fork and knife" />
+                        <img className="utensilIcon" src={utensilIcon} alt="fork and knife" />
                         {restaurant.cuisine}
                     </div>
-                    <div className="restaurantShowDescription"
-                    >
-                        {restaurant.description}
-                    </div>
+                </div>
+                <div className="restaurantShowDescription">
+                    {restaurant.description}
+                </div>
+                <div className="reservationFormContainer">
                     <ReservationForm />
                 </div>
             </main>

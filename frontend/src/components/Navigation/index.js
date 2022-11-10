@@ -19,13 +19,15 @@ function Navigation() {
                 </a>
             </div>
 
-            <div className="buttonAndMenuContainer">
-                {sessionUser &&
-                <>
-                    <ProfileButton user={sessionUser} />
-                    {/* <button onClick={ () => dispatch(logout()) }>Log out</button> */}
-                </>
-                }
+            <div>
+                <div className="buttonAndMenuContainer">
+                    {sessionUser &&
+                    <>
+                        <ProfileButton user={sessionUser} />
+                        {/* <button onClick={ () => dispatch(logout()) }>Log out</button> */}
+                    </>
+                    }
+                </div>
 
                 {!sessionUser &&
                 <>

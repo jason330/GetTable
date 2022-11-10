@@ -6,6 +6,7 @@ import ReservationUpdateForm from '../ReservationUpdateForm'
 import calendar from './calendar.svg'
 import clock from './clock.svg'
 import person from './personIcon.svg'
+import './ReservationUpdatePage.css'
 
 export default function ReservationUpdatePage() {
     const dispatch = useDispatch()
@@ -36,29 +37,29 @@ export default function ReservationUpdatePage() {
     }
 
     return(
-        <main>
-            <h1>Your current reservation</h1>
-            <section>
-                <img src="https://images.otstatic.com/prod1/47955298/3/small.jpg" alt="" />
-                <div>
-                    <h2>{restaurant.name}</h2>
-                    <div>
-                        <div>
-                            <img src={calendar} alt="" />
-                            <h3>{reservation.reservationDate}</h3>
+        <main className='reservModifyMainContainer'>
+            <h1 className='reservModifyHeader'>Your current reservation</h1>
+            <section className='reservModifyCurrentResContainer'>
+                <img className='reservModifyImage' src="https://images.otstatic.com/prod1/47955298/3/small.jpg" alt="" />
+                <div className='reservModifyCurrentResText'>
+                    <h2 className='reservModifyRestaurantName'>{restaurant.name}</h2>
+                    <div className='reservModifyCurrentDetails'>
+                        <div className='reservModifyCurrentDT'>
+                            <img className='reservModifyIcon' src={calendar} alt="" />
+                            <h3 className='reservModifyCurr'>{reservation.reservationDate}</h3>
                         </div>
-                        <div>
-                            <img src={clock} alt="" />
-                            <h3>{reservation.reservationTime}</h3>
+                        <div className='reservModifyCurrentDT'>
+                            <img className='reservModifyIcon' src={clock} alt="" />
+                            <h3 className='reservModifyCurr'>{reservation.reservationTime}</h3>
                         </div>
-                        <div>
-                            <img src={person} alt="" />
-                            <h3>{reservation.partySize}</h3>
+                        <div className='reservModifyPartyContainer'>
+                            <img className='reservModifyIcon' src={person} alt="" />
+                            <h3 className='reservModifyCurr'>{reservation.partySize}</h3>
                         </div>
                     </div>
                 </div>
             </section>
-            <h2>Modify your reservation</h2>
+            <h2 className='reservModifyText'>Modify your reservation</h2>
             <ReservationUpdateForm reservation={reservation} restaurant={restaurant}/>
         </main>
     )

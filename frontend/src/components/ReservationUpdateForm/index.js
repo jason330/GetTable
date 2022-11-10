@@ -2,10 +2,11 @@ import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Redirect, useHistory } from "react-router-dom"
 import { useParams } from "react-router-dom/cjs/react-router-dom.min"
-import { createReservation } from "../../store/reservations"
+import { updateReservation } from "../../store/reservations"
 
 export default function ReservationUpdateForm({reservation, restaurant}) {
     const dispatch = useDispatch()
+    const {reservationId} = useParams()
     const [partySize, setPartySize] = useState(reservation.partySize)
     const [reservationDate, setReservationDate] = useState(reservation.reservationDate)
     const [reservationTime, setReservationTime] = useState(reservation.reservationTime)
@@ -25,13 +26,13 @@ export default function ReservationUpdateForm({reservation, restaurant}) {
 
         if (userId) {
             setErrors([]);
-            return dispatch(createReservation({
+            return dispatch(updateReservation(reservationId, {
                 userId,
                 restaurantId,
                 reservationDate,
                 reservationTime,
-                partySize
-            }))
+                partySize}
+            ))
                 .catch(async (res) => {
                     let data;
                     try {
@@ -43,17 +44,19 @@ export default function ReservationUpdateForm({reservation, restaurant}) {
                     else if (data) setErrors([data]);
                     else setErrors([res.statusText]);
                 })                
-                .then(data=>history.push(`/reservations/${data.id}`))
+                .then(data=>history.push(`/reservations/${data.reservation.id}`))
         }
         return setErrors( ['Please sign in or click Demo User to make a reservation.'])
     })
 
     return(
-        <form onSubmit={handleSubmit}>
-            <label>Party Size
+        <form className="reservForm" onSubmit={handleSubmit}>
+            <div className="partySizeContainer">
+                <label className="partySizeLabel">Party Size</label>
                 <select
                     name="partySize"
                     id=""
+                    className="partySizeSelect"
                     value={partySize}
                     onChange={ (e) => setPartySize(e.target.value) }
                     // defaultValue={2}
@@ -69,10 +72,10 @@ export default function ReservationUpdateForm({reservation, restaurant}) {
                     <option value={9}>9 people</option>
                     <option value={10}>10 people</option>
                 </select>
-            </label>
+            </div>
             <div className="reservationFormDateTimeLabelsContainer">
-                <label htmlFor="selectedDate">Date</label>
-                <label htmlFor="selectedTime">Time</label>
+                <label className="reservFormDateTime" htmlFor="selectedDate">Date</label>
+                <label className="reservFormDateTime" htmlFor="selectedTime">Time</label>
             </div>
             <div className="reservationFormDateTimeContainer">
                 <input
@@ -80,12 +83,14 @@ export default function ReservationUpdateForm({reservation, restaurant}) {
                     min={new Date().toJSON().split('T')[0] }
                     name="selectedDate"
                     id="selectedDate"
+                    className="reservFormDate"
                     value={reservationDate}
                     onChange={ (e) => setReservationDate(e.target.value) }
                 />
                 <select
                     name="selectedTime"
                     id="selectedTime"
+                    className="reservFormTime"
                     value={reservationTime}
                     onChange={ (e) => setReservationTime(e.target.value) }
                     // defaultValue="7:00 PM"
@@ -105,11 +110,11 @@ export default function ReservationUpdateForm({reservation, restaurant}) {
                     <option value="11:00 PM">11:00 PM</option>
                     <option value="11:30 PM">11:30 PM</option>
                 </select>
-                <button className="formSubmitButton red" type="submit">Complete reservation</button>
                 <ul>
                 {errors.map(error => <li key={error}>{error}</li>)}
                 </ul>
             </div>
+            <button className="reservFormButton red" type="submit">Complete reservation</button>
         </form>
     )
 }

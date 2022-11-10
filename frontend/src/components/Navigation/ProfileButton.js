@@ -36,11 +36,11 @@ function ProfileButton( {user} ) {
                 <img className="profileIconImage" src={userIcon} alt="user profile button" />
             </button>
             {showMenu &&
-            <menu>
-                <li>Hello {user.username ? user.username : user.email}!</li>
+            <menu className='profileMenuContainer'>
+                <li className='profileMenuGreeting'>Hello {user.username ? user.username : user.email}!</li>
 
-                <li><a href="/user">My Reservations</a></li>
-                <li><button onClick={signOut}>Sign Out</button></li>
+                <li className='profileMenuUserLink'><a href="/user">My Reservations</a></li>
+                <li className='profileMenuSignOut' onClick={signOut}>Sign out</li>
             </menu>}
         </>
     )
