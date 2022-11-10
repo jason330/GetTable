@@ -7,19 +7,23 @@ export default function UserReservationListItem( {reservation} ) {
     const restaurant = useSelector(state => state.restaurants[reservation.restaurantId])
 
     return(
-        <a href={`/reservations/${reservation.id}`}>
-            <img src="" alt="" />
+        <a className="reservationMainContainer" href={`/reservations/${reservation.id}`}>
+            <img className="reservImage" src="" alt="" />
             <div>
-                <h1>{restaurant.name}</h1>
+                <h1 className="reservRestaurantName">{restaurant.name}</h1>
                 <div className="reservationConfMessageContainer">
-                    <img src={greenCheck} alt="" />
+                    <img className="greenCheckImage" src={greenCheck} alt="" />
                     <h2 className="reservationConfTxt">Reservation confirmed</h2>
                 </div>
                 <div className="reservationDetailsContainer">
-                    <img src={personIcon} alt="" />
-                    <h2>{reservation.partySize}</h2>
-                    <img src={calendar} alt="" />
-                    <h2>{reservation.reservationDate} at {reservation.reservationTime}</h2>
+                    <div className="reservPartySizeContainer">
+                        <img className="reservIcon" src={personIcon} alt="" />
+                        <h2>{reservation.partySize}</h2>
+                    </div>
+                    <div className="reservDateTimeContainer">
+                        <img className="reservIcon" src={calendar} alt="" />
+                        <h2>{reservation.reservationDate} at {reservation.reservationTime}</h2>
+                    </div>
                 </div>
                 {/* {!cancelled &&
                 <div className="reservationUpdateLinkContainer">

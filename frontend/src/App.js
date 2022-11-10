@@ -40,7 +40,7 @@ function App() {
             <ReservationUpdatePage />
           </Route>
 
-          <Route path='/user' >
+          <Route path='/user/dining-dashboard' >
             <UserPage />
           </Route>
 

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUser } from "../../store/user";
 import UserReservationList from "./UserReservationList";
+import './UserPage.css'
 
 export default function UserPage() {
 
@@ -15,7 +16,7 @@ export default function UserPage() {
     const dispatch = useDispatch()
     const allReservations = useSelector( state => state.reservations )
     const reservationsArray = Object.values(allReservations)
-// debugger
+
     useEffect( () => {
         dispatch( fetchUser(user.id) )
     }, [dispatch])
@@ -28,8 +29,8 @@ export default function UserPage() {
 
     return(
         <main>
-            <h1>{user.username}</h1>
-            <h2>Reservations</h2>
+            <h1 className="userPageUsername">{user.username ? user.username : user.email}</h1>
+            <h2 className="userPageNav">RESERVATIONS</h2>
             <section>
                 <UserReservationList reservationsArray={reservationsArray} />
             </section>

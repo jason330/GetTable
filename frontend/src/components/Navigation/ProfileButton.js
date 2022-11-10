@@ -39,7 +39,7 @@ function ProfileButton( {user} ) {
             <menu className='profileMenuContainer'>
                 <li className='profileMenuGreeting'>Hello {user.username ? user.username : user.email}!</li>
 
-                <li className='profileMenuUserLink'><a href="/user">My Reservations</a></li>
+                <li className='profileMenuUserLink'><a href="/user/dining-dashboard">My Reservations</a></li>
                 <li className='profileMenuSignOut' onClick={signOut}>Sign out</li>
             </menu>}
         </>

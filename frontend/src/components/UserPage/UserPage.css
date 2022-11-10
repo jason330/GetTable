@@ -1,0 +1,15 @@
+.userPageUsername {
+    font-family: 'Lato';
+    border-bottom: 0.0625rem solid #d8d9db;
+    color: #2d333f;
+    padding: 16px 1.5rem;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.userPageNav {
+    font-family: 'Lato';
+    border-bottom: 0.0625rem solid #d8d9db;
+    padding: 0 1.5rem;
+    font-weight: 700;
+}
