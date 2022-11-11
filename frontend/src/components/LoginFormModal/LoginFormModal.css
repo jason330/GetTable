@@ -55,6 +55,7 @@ form {
 }
 
 .formSubmitButton {
+    background-color: #da3743;
     height: 3rem;
     font-weight: 700;
     text-align: center;

@@ -22,3 +22,12 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# GetTable
+
+GetTable is a clone of OpenTable, a site where users can find information about restaurants and make reservations. 
+
+Live link: https://get-table.onrender.com/
+
+## Technologies used
+

@@ -6,7 +6,9 @@ function RestaurantListItem( {restaurant} ) {
         <li className="restaurantListItemContainer">
             <a href={`/restaurants/${restaurant.id}`}>
                 <div className="restaurantIndexContainer">
-                    <img className='restaurantIndexImg' src='./small-steak.jpeg' alt="steak" />
+                    <div>
+                        <img className='restaurantIndexImg' src={restaurant.photoUrl} alt="restaurant" />
+                    </div>
                     <div className='restaurantIndexTxtContainer'>
                         <h3 className='restaurantIndexName'>
                             {restaurant.name}

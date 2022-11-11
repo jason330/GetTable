@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import greenCheck from './checkImage.svg'
+import redX from './redXimage.svg'
 import personIcon from './personIcon.svg'
 import calendar from './calendar.svg'
 import { destroyReservation, fetchReservation } from "../../store/reservations";
@@ -45,21 +46,23 @@ export default function ReservationPage() {
     return(
         <main>
             <section className="reservationMainContainer">
-                <img className="reservImage" src="https://images.otstatic.com/prod1/47955298/3/small.jpg" alt="" />
+                <img className="reservImage" src={restaurant.photoUrl} alt="restaurant" />
                 <div>
                     <h1 className="reservRestaurantName">{restaurant.name}</h1>
                     <div className="reservationConfMessageContainer">
                         {!cancelled &&
-                        <img className="greenCheckImage" src={greenCheck} alt="" />}
-                        <h2>Reservation {!cancelled ? 'confirmed' : 'cancelled.'}</h2>
+                        <img className="greenCheckImage" src={greenCheck} alt="green check" />}
+                        {cancelled &&
+                        <img className="greenCheckImage" src={redX} alt='red X'/>}
+                        <h2>Reservation {!cancelled ? 'confirmed' : 'canceled'}</h2>
                     </div>
                     <div className="reservationDetailsContainer">
                         <div className="reservPartySizeContainer">
-                            <img className="reservIcon" src={personIcon} alt="" />
+                            <img className="reservIcon" src={personIcon} alt="person icon" />
                             <h2>{reservation.partySize}</h2>
                         </div>
                         <div className="reservDateTimeContainer">
-                            <img className="reservIcon" src={calendar} alt="" />
+                            <img className="reservIcon" src={calendar} alt="calendar" />
                             <h2>{reservation.reservationDate} at {reservation.reservationTime}</h2>
                         </div>
                     </div>

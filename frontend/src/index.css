@@ -18,6 +18,16 @@ span, article, footer, time, small {
   background: transparent;
 }
 
+.entirePageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.pageMainContentContainer {
+  flex: 1;
+}
+
 header {
   padding: 14px;
   background-color: #f1f2f4;
@@ -61,7 +71,6 @@ input[type="submit"] {
 }
 
 button {
-  /* background-color: #da3743; */
   color: #fff;
   border-radius: 4px;
   font-size: 16px;

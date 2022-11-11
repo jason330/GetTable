@@ -24,7 +24,6 @@
     /* display: block; */
     /* min-height: 2.25rem; */
     /* line-height: 1.15; */
-
 }
 
 .restaurantsMainSubContainer {
@@ -98,7 +97,7 @@
 .restaurantIndexImg {
     min-height: 132px;
     width: 100%;
-
+    object-fit: cover;
 }
 
 .restaurantIndexTxtContainer {

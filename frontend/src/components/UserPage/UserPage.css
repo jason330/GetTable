@@ -10,6 +10,23 @@
 .userPageNav {
     font-family: 'Lato';
     border-bottom: 0.0625rem solid #d8d9db;
-    padding: 0 1.5rem;
-    font-weight: 700;
+    padding: 1.5rem;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.userPageReservContainer {
+    margin: 32px 16px;
+    /* min-height: 32rem; */
+}
+
+.userPageReservItemContainer {
+    display: flex;
+    padding: 32px;
+    border-radius: 4px;
+    margin: 32px 32px 0;
+    /* margin-bottom: 16px; */
+    font-family: 'Lato';
+    line-height: 1.5rem;
+    border: 0.0625rem solid #d8d9db;
 }

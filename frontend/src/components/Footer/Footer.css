@@ -1,0 +1,36 @@
+.footerContainer {
+    font-family: 'Lato';
+    background-color: #2d333f;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    box-sizing: border-box;
+    padding: 48px 32px;
+}
+
+.footerText {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+
+.footerLinkContainer {
+    display: flex
+}
+
+.footerLink {
+    margin-right: 8px;
+}
+
+.footerImg {
+    opacity: .7;
+    height: 24px;
+}
+
+.footerImg:hover {
+    opacity: 1;
+}
+

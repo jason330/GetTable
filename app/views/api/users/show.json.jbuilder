@@ -14,6 +14,7 @@ json.restaurants do
     @user.reservations.each do |reservation|
         json.set! reservation.restaurant.id do
             json.extract! reservation.restaurant, :id, :name
+            json.photoUrl reservation.restaurant.photos[0].url
         end
     end
 end

@@ -1,14 +1,19 @@
+.restaurantShowImgContainer {
+    height: 296px;
+}
+
 .restaurantShowImg {
     height: 296px;
+    object-fit: cover;
     width: 100%;
-    animation-duration: 0.8s;
+    /* animation-duration: 0.8s;
     animation-timing-function: ease-in-out;
-    /* animation-delay: 0s;
+    animation-delay: 0s;
     animation-iteration-count: 1;
     animation-direction: normal;
     animation-fill-mode: none;
-    animation-play-state: running; */
-    animation-name: img;
+    animation-play-state: running;
+    animation-name: img; */
 }
 
 .restaurantShowMainContainer {

@@ -23,7 +23,7 @@ export default function UserPage() {
 
     if ( user === null ) {
         return(
-            <h1>Please sign in or sign up to see your dashboard.</h1>
+            <h1 className="userPageUsername">Please sign in or sign up to see your dashboard.</h1>
         )
     }
 
@@ -31,10 +31,9 @@ export default function UserPage() {
         <main>
             <h1 className="userPageUsername">{user.username ? user.username : user.email}</h1>
             <h2 className="userPageNav">RESERVATIONS</h2>
-            <section>
+            <section className="userPageReservContainer">
                 <UserReservationList reservationsArray={reservationsArray} />
             </section>
         </main>
     )
-
 }

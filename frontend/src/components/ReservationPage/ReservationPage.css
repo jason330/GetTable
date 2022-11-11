@@ -15,6 +15,8 @@
     margin-right: 16px;
     border-radius: 4px;
     height: 7.75rem;
+    width: 7.75rem;
+    object-fit: cover;
 }
 
 .reservRestaurantName {

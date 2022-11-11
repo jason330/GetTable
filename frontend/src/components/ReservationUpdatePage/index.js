@@ -40,20 +40,20 @@ export default function ReservationUpdatePage() {
         <main className='reservModifyMainContainer'>
             <h1 className='reservModifyHeader'>Your current reservation</h1>
             <section className='reservModifyCurrentResContainer'>
-                <img className='reservModifyImage' src="https://images.otstatic.com/prod1/47955298/3/small.jpg" alt="" />
+                <img className='reservModifyImage' src={restaurant.photoUrl} alt="restaurant" />
                 <div className='reservModifyCurrentResText'>
                     <h2 className='reservModifyRestaurantName'>{restaurant.name}</h2>
                     <div className='reservModifyCurrentDetails'>
                         <div className='reservModifyCurrentDT'>
-                            <img className='reservModifyIcon' src={calendar} alt="" />
+                            <img className='reservModifyIcon' src={calendar} alt="calendar" />
                             <h3 className='reservModifyCurr'>{reservation.reservationDate}</h3>
                         </div>
                         <div className='reservModifyCurrentDT'>
-                            <img className='reservModifyIcon' src={clock} alt="" />
+                            <img className='reservModifyIcon' src={clock} alt="clock" />
                             <h3 className='reservModifyCurr'>{reservation.reservationTime}</h3>
                         </div>
                         <div className='reservModifyPartyContainer'>
-                            <img className='reservModifyIcon' src={person} alt="" />
+                            <img className='reservModifyIcon' src={person} alt="person icon" />
                             <h3 className='reservModifyCurr'>{reservation.partySize}</h3>
                         </div>
                     </div>

@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchRestaurant } from "../../store/restaurants";
-import './steak.jpeg' 
 import './RestaurantShowPage.css'
 import utensilIcon from './utensilIcon.svg'
 import ReservationForm from "../ReservationForm";
@@ -21,7 +20,9 @@ function RestaurantShowPage() {
 
     return(
         <div>
-            <img className="restaurantShowImg" src='../steak.jpeg' alt="" />
+            <div className="restaurantShowImgContainer" >
+                <img className="restaurantShowImg" src={restaurant.photoUrl} alt="restaurant" />
+            </div>
             <main className="restaurantShowMainContainer">
                 <h1 className="restaurantShowName">
                     {restaurant.name}

@@ -110,11 +110,11 @@ export default function ReservationUpdateForm({reservation, restaurant}) {
                     <option value="11:00 PM">11:00 PM</option>
                     <option value="11:30 PM">11:30 PM</option>
                 </select>
-                <ul>
-                {errors.map(error => <li key={error}>{error}</li>)}
-                </ul>
             </div>
             <button className="reservFormButton red" type="submit">Complete reservation</button>
+            <ul>
+                {errors.map(error => <li key={error}>{error}</li>)}
+            </ul>
         </form>
     )
 }

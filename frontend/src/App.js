@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from "react-router-dom";
+import Footer from './components/Footer';
 import LoginFormModal from './components/LoginFormModal/LoginForm';
 import Navigation from './components/Navigation';
 import ReservationPage from './components/ReservationPage';
@@ -11,44 +12,49 @@ import UserPage from './components/UserPage';
 
 function App() {
   return (
-    <>
+    <main className='entirePageContainer'>
+      <header></header>
       <Navigation />
+        <section className='pageMainContentContainer'>
+          <Switch>
+            <Route path='/restaurants/:restaurantId'>
+              <RestaurantShowPage />
+            </Route>
+            
+            {/* <Route path='/reservations/new'>
 
-        <Switch>
-          <Route path='/restaurants/:restaurantId'>
-            <RestaurantShowPage />
-          </Route>
-          
-          {/* <Route path='/reservations/new'>
-
-          </Route> */}
+            </Route> */}
 
 
-          {/* <Route path="/signIn">
-            <LoginFormModal />
-          </Route> */}
+            {/* <Route path="/signIn">
+              <LoginFormModal />
+            </Route> */}
 
-          {/* <Route path='/signUp'>
-            <SignupFormModal />
-          </Route> */}
-    
-          <Route exact path='/reservations/:reservationId'>
-            <ReservationPage />
-          </Route>
+            {/* <Route path='/signUp'>
+              <SignupFormModal />
+            </Route> */}
+      
+            <Route exact path='/reservations/:reservationId'>
+              <ReservationPage />
+            </Route>
 
-          <Route exact path='/reservations/modify/:reservationId'>
-            <ReservationUpdatePage />
-          </Route>
+            <Route exact path='/reservations/modify/:reservationId'>
+              <ReservationUpdatePage />
+            </Route>
 
-          <Route path='/user/dining-dashboard' >
-            <UserPage />
-          </Route>
+            <Route path='/user/dining-dashboard' >
+              <UserPage />
+            </Route>
 
-          <Route path='/'>
-            <RestaurantIndexPage />
-          </Route>
-        </Switch>
-    </>
+            <Route path='/'>
+              <RestaurantIndexPage />
+            </Route>
+          </Switch>
+
+        </section>
+      <Footer />
+
+    </main>
   );
 }
 
