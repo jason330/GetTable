@@ -10,7 +10,7 @@ export default function Footer() {
                 <a className='footerLink' href="https://github.com/jason330">
                     <img className='footerImg' src={github} alt="github" />
                 </a>
-                <a className='footerLink' href="https://www.linkedin.com/">
+                <a className='footerLink' href="https://www.linkedin.com/in/jason-s-a2b08b258/">
                     <img className='footerImg' src={linkedIn} alt="linked in" />
                 </a>
             </div>
