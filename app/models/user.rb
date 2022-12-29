@@ -7,7 +7,8 @@ class User < ApplicationRecord
 
   before_validation :ensure_session_token
 
-  has_many :reservations
+  has_many :reservations, dependent: :destroy
+  has_many :reports
   
   def self.find_by_credentials(email, password)
     @user = User.find_by email: email
