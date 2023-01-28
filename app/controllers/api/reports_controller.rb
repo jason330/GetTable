@@ -2,7 +2,7 @@ class Api::ReportsController < ApplicationController
 
   before_action :require_logged_in, only: [:create, :update, :destroy]
 
-  def show
+  def show  #need show?
     @report = Report.find(params[:id])
 
     if @report
@@ -26,7 +26,7 @@ class Api::ReportsController < ApplicationController
     @report = Report.find(params[:id])
 
     if @report.update(report_params)
-      render :update
+      render :create
     else
       render json: { errors: @report.errors.full_messages }, status: :unprocessable_entity
     end
