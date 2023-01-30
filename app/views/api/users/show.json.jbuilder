@@ -18,3 +18,20 @@ json.restaurants do
         end
     end
 end
+
+json.reports do
+    @user.reports.each do |report|
+        json.set! report.id do
+            json.extract! report,
+                :id,
+                :user_id,
+                :restaurant_id,
+                :reservation_id,
+                :rating_overall,
+                :rating_food,
+                :rating_service,
+                :rating_ambience,
+                :review
+        end
+    end
+end

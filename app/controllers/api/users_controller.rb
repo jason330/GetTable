@@ -13,7 +13,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find( params[:id] )
+    @user = User.includes(:reservations, :reports).find( params[:id] )  #add restaurants sub query to reservations
 
     if @user
       render :show

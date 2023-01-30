@@ -38,7 +38,7 @@ export default function restaurantReducer( initialState = {}, action ) {
         case SET_RESTAURANTS:
             return action.payload;
         case SET_RESTAURANT:            
-            return { ...initialState, [action.payload.restaurants.id]: action.payload.restaurants}
+            return { ...initialState, [action.payload.restaurant.id]: action.payload.restaurant}
         case GET_RESERVATION:
             return { ...initialState, [action.payload.restaurant.id]: action.payload.restaurant}
         case SET_USER:
