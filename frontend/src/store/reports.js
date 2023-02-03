@@ -1,4 +1,6 @@
 import csrfFetch from "./csrf"
+import { SET_RESTAURANT } from "./restaurants"
+import { SET_USER } from "./user"
 
 const ADD_REPORT = 'reports/addReport'
 const MODIFY_REPORT = 'reports/modifyReport'
@@ -101,6 +103,10 @@ export default function reportReducer( initialState = {}, action ) {
             const newState = { ...initialState }
             delete newState[action.payload]
             return newState
+        case SET_RESTAURANT:
+            return { ...initialState, ...action.payload.reports }
+        case SET_USER:
+            return { ...initialState, ...action.payload.reports }
         default:
             return initialState
     }

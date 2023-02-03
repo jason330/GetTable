@@ -3,7 +3,7 @@ import { GET_RESERVATION } from "./reservations";
 import { SET_USER } from "./user";
 
 const SET_RESTAURANTS = 'restaurants/setRestaurants'
-const SET_RESTAURANT = 'restaurants/setRestaurant'
+export const SET_RESTAURANT = 'restaurants/setRestaurant'
 
 const setRestaurants = ( restaurants ) => {
     return {
