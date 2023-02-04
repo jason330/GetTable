@@ -18,6 +18,11 @@ function RestaurantShowPage() {
 
     if ( restaurant === undefined ) return null;
 
+    const allReports = useSelector( state => state.reports )
+    const restaurantReportsArray =
+        Object.values(allReports).filter(report =>
+            report.restaurantId === restaurantId )
+            
     return(
         <div>
             <div className="restaurantShowImgContainer" >
