@@ -6,6 +6,7 @@ import { fetchRestaurant } from "../../store/restaurants";
 import './RestaurantShowPage.css'
 import utensilIcon from './utensilIcon.svg'
 import ReservationForm from "../ReservationForm";
+import ReportList from "./ReportList";
 
 function RestaurantShowPage() {
     const dispatch = useDispatch()
@@ -16,13 +17,13 @@ function RestaurantShowPage() {
         dispatch(fetchRestaurant(restaurantId))
     },[dispatch, restaurantId])
 
-    if ( restaurant === undefined ) return null;
-
     const allReports = useSelector( state => state.reports )
     const restaurantReportsArray =
-        Object.values(allReports).filter(report =>
-            report.restaurantId === restaurantId )
-            
+    Object.values(allReports).filter(report =>
+        report.restaurantId === restaurantId )
+        
+    if ( restaurant === undefined ) return null;
+
     return(
         <div>
             <div className="restaurantShowImgContainer" >
@@ -44,6 +45,7 @@ function RestaurantShowPage() {
                 <div className="reservationFormContainer">
                     <ReservationForm />
                 </div>
+                <ReportList restaurantReportsArray={restaurantReportsArray} />
             </main>
         </div>
     )

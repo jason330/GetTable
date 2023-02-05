@@ -6,6 +6,7 @@ end
 json.reports do
     @restaurant.reports.each do |report|
         json.set! report.id do
+            json.reservation_date @restaurant.reservations[report.reservation_id].reservation_date
             json.extract! report,
                 :id,
                 :user_id,

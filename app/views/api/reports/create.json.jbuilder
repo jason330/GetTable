@@ -1,3 +1,4 @@
+json.reservation_date @report.reservation.reservation_date
 json.extract! @report,
     :id,
     :user_id,
