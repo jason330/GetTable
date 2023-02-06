@@ -15,11 +15,12 @@ export default function UserPage() {
 
     const dispatch = useDispatch()
     const allReservations = useSelector( state => state.reservations )
-    const reservationsArray = Object.values(allReservations)
+    const reservationsArray = Object.values(allReservations).sort((a, b) =>
+        new Date(b.reservationDate) - new Date(a.reservationDate))    //need to add .filter for specific user?
 
     useEffect( () => {
         dispatch( fetchUser(user.id) )
-    }, [dispatch])
+    }, [dispatch, user.id])
 
     if ( user === null ) {
         return(
