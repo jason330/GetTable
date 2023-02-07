@@ -8,7 +8,7 @@ import './ReservationForm.css'
 function ReservationForm() {
     const dispatch = useDispatch()
     const [partySize, setPartySize] = useState(2)
-    const [reservationDate, setReservationDate] = useState(new Date().toJSON().split('T')[0])
+    const [reservationDate, setReservationDate] = useState(new Date().toLocaleDateString())
     const [reservationTime, setReservationTime] = useState("7:00 PM")
     const [errors, setErrors] = useState([])
     const {restaurantId} = useParams();
@@ -82,7 +82,7 @@ function ReservationForm() {
                 <div className="reservationFormDateTimeContainer">
                     <input
                         type="date"
-                        min={new Date().toJSON().split('T')[0] }
+                        min={new Date().toLocaleDateString() }
                         name="selectedDate"
                         id="selectedDate"
                         className="reservFormDate"

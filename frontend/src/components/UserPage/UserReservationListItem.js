@@ -6,7 +6,7 @@ import calendar from './calendar.svg'
 export default function UserReservationListItem( {reservation} ) {
     const restaurant = useSelector(state => state.restaurants[reservation.restaurantId])
 
-    const pastReservation = new Date(reservation.reservationDate) - new Date() < 0
+    const pastReservation = new Date(reservation.reservationDate) - new Date(new Date().toLocaleDateString()) < 0
     console.log('res.res date is ' + reservation.reservationDate)
     console.log('new date(res.res date) is ' + new Date(reservation.reservationDate))
     console.log('new date is ' + new Date())
