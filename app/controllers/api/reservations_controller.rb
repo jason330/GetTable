@@ -4,7 +4,7 @@ class Api::ReservationsController < ApplicationController
   before_action :require_logged_in, only: [:update, :destroy]
 
   def show
-    @reservation = Reservation.find_by(id: params[:id]) #add .includes?
+    @reservation = Reservation.includes(:restaurant).find(params[:id])
 
     if @reservation
       render :show
