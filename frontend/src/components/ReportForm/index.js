@@ -1,51 +1,74 @@
 import { useState } from "react"
+import star from './star.svg'
+import './ReportForm.css'
 
 export default function ReportForm( {user, report, restaurant, reservation} ) {
 
-    const ReportStars = () => {
-        const ratings = [1,2,3,4,5]
-        const [hoveredStar, setHoveredStar] = useState()
-        const [selectedStar, setSelectedStar] = useState()
+    const [hoveredOverall, setHoveredOverall] = useState()
+    const [hoveredFood, setHoveredFood] = useState()
+    const [hoveredService, setHoveredService] = useState()
+    const [hoveredAmbience, setHoveredAmbience] = useState()
 
-        let cssClass
+    const [selectedOverall, setSelectedOverall] = useState()
+    const [selectedFood, setSelectedFood] = useState()
+    const [selectedService, setSelectedService] = useState()
+    const [selectedAmbience, setSelectedAmbience] = useState()
+
+    const ReportStars = ( {hovered, setHovered, selected, setSelected} ) => {
+        const ratings = [1,2,3,4,5]
+        const hoveredStar = hovered
+        const setHoveredStar = setHovered
+        const selectedStar = selected
+        const setSelectedStar = setSelected
+
+        let numRedStars
         if (hoveredStar) {
-            cssClass = hoveredStar.toString()
+            numRedStars = hoveredStar
         } else if (selectedStar) {
-            cssClass = selectedStar.toString()
+            numRedStars = selectedStar
         } else {
-            cssClass = "ratingStar"
+            numRedStars = 0
         }
 
         const ratingText = {
-            1: "Outstanding",
-            2: "Very good",
+            1: "Poor",
+            2: "Fair",
             3: "Good",
-            4: "Fair",
-            5: "Poor"
+            4: "Very good",
+            5: "Outstanding"
         }
 
         return(
             <>
                 <div>{ratings.map(rating =>
-                    <img
-                        src=""
-                        onMouseEnter={ () => setHoveredStar(rating) }
-                        onMouseLeave={ () => setHoveredStar() }
-                        onClick={ () => setSelectedStar(rating) }
-                        className={cssClass}
-                        key={rating}
-                        alt={`${rating}`} />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    onMouseEnter={ () => setHoveredStar(rating) }
+                    onMouseLeave={ () => setHoveredStar() }
+                    onClick={ () => setSelectedStar(rating) }
+                    key={rating}
+                    alt={`${rating} out of 5 stars`}
+                    ><path d="M3.213 15.984c-.063 0-.104-.01-.125-.031-.104-.063-.136-.136-.094-.219l.876-5.516L.083 6.331C0 6.247-.021 6.164.021 6.08c.021-.063.083-.115.188-.157l5.256-.783L7.781.125C7.864.042 7.937 0 8 0c.104 0 .177.042.219.125l2.347 5.015 5.226.784a.282.282 0 0 1 .188.157c.041.083.02.166-.063.25l-3.786 3.886.907 5.516a.297.297 0 0 1-.094.219c-.104.063-.188.063-.25 0L8 13.383l-4.662 2.57c-.021.021-.063.031-.125.031z"
+                    fill={numRedStars >= rating ? '#da3743' : "#E1E1E1"} /></svg>
+                    // <img
+                    //     src={star}
+                    //     onMouseEnter={ () => setHoveredStar(rating) }
+                    //     onMouseLeave={ () => setHoveredStar() }
+                    //     onClick={ () => setSelectedStar(rating) }
+                    //     className={numRedStars >= rating ? 'redStar' : numRedStars.toString()}
+                    //     key={rating}
+                    //     alt={`${rating}`} />
                     )
                 }
                 </div>
-                <h4>{ratingText[selectedStar]}</h4>
+                <h4>{ratingText[numRedStars]}</h4>
             </>
         )
-        for (let i of numStars) {
-            <img src="" alt="" />
+        // for (let i of numStars) {
+        //     <img src="" alt="" />
 
-        }
+        // }
     }
+
     return(
         <main>
             <h1>
@@ -55,7 +78,33 @@ export default function ReportForm( {user, report, restaurant, reservation} ) {
             <h2>Reservation made on {reservation.reservationDate}</h2>
             <form className="">
                 <h3>Overall</h3>
-                <ReportStars />
+                <ReportStars 
+                    hovered={hoveredOverall}
+                    selected={selectedOverall}
+                    setHovered={setHoveredOverall}
+                    setSelected={setSelectedOverall}
+                    />
+                <h3>Food</h3>
+                <ReportStars 
+                    hovered={hoveredFood}
+                    selected={selectedFood}
+                    setHovered={setHoveredFood}
+                    setSelected={setSelectedFood}
+                    />
+                <h3>Service</h3>
+                <ReportStars 
+                    hovered={hoveredService}
+                    selected={selectedService}
+                    setHovered={setHoveredService}
+                    setSelected={setSelectedService}
+                    />
+                <h3>Ambience</h3>
+                <ReportStars 
+                    hovered={hoveredAmbience}
+                    selected={selectedAmbience}
+                    setHovered={setHoveredAmbience}
+                    setSelected={setSelectedAmbience}
+                    />
 
             </form>
         </main>
