@@ -18,10 +18,16 @@ function RestaurantShowPage() {
     },[dispatch, restaurantId])
 
     const allReports = useSelector( state => state.reports )
-    const restaurantReportsArray =
-    Object.values(allReports).filter(report =>
-        report.restaurantId === restaurantId )
+    console.log('allReports is ',allReports)
+    console.log('Object.values(allReports) is ',Object.values(allReports))
+    console.log('restaurantId is ',restaurantId)
+    const allReportsArray = Object.values(allReports)
+    console.log('allReportsArray is ', allReportsArray)
+
+    const restaurantReportsArray = allReportsArray.filter(report =>
+        report.restaurantId === +restaurantId )
         
+    console.log('restaurantReportsArray is ', restaurantReportsArray)
     if ( restaurant === undefined ) return null;
 
     return(

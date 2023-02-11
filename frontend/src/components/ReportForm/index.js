@@ -1,8 +1,10 @@
 import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { createReport } from "../../store/reports"
 import star from './star.svg'
 import './ReportForm.css'
 
-export default function ReportForm( {user, report, restaurant, reservation} ) {
+export default function ReportForm( {user, report, restaurant, reservation, setShowReportForm} ) {
 
     const [hoveredOverall, setHoveredOverall] = useState()
     const [hoveredFood, setHoveredFood] = useState()
@@ -13,6 +15,10 @@ export default function ReportForm( {user, report, restaurant, reservation} ) {
     const [selectedFood, setSelectedFood] = useState()
     const [selectedService, setSelectedService] = useState()
     const [selectedAmbience, setSelectedAmbience] = useState()
+    const [review, setReview] = useState('')
+
+    const dispatch = useDispatch()
+    const [errors, setErrors] = useState([])
 
     const ReportStars = ( {hovered, setHovered, selected, setSelected} ) => {
         const ratings = [1,2,3,4,5]
@@ -20,7 +26,7 @@ export default function ReportForm( {user, report, restaurant, reservation} ) {
         const setHoveredStar = setHovered
         const selectedStar = selected
         const setSelectedStar = setSelected
-
+        
         let numRedStars
         if (hoveredStar) {
             numRedStars = hoveredStar
@@ -69,6 +75,37 @@ export default function ReportForm( {user, report, restaurant, reservation} ) {
         // }
     }
 
+    const handleSubmit = ( e => {
+        e.preventDefault();
+
+        if (user) {
+            setErrors([]);
+            return dispatch(createReport({
+                userId: user.id,
+                restaurantId: restaurant.id,
+                reservationId: reservation.id,
+                ratingOverall: selectedOverall,
+                ratingFood: selectedFood,
+                ratingService: selectedService,
+                ratingAmbience: selectedAmbience,
+                review: review
+            }))
+                .catch(async (res) => {
+                    let data;
+                    try {
+                        data = await res.clone().json();
+                    } catch {
+                        data = await res.text(); // Will hit this case if the server is down
+                    }
+                    if (data?.errors) setErrors(data.errors);
+                    else if (data) setErrors([data]);
+                    else setErrors([res.statusText]);
+                })                
+                .then(() => setShowReportForm(false))
+        }
+        return setErrors( ['Please sign in or click Demo User to leave a review.'])
+    })
+
     return(
         <main>
             <h1>
@@ -76,36 +113,43 @@ export default function ReportForm( {user, report, restaurant, reservation} ) {
             </h1>
             <h2>Rate your dining experience</h2>
             <h2>Reservation made on {reservation.reservationDate}</h2>
-            <form className="">
+            <form className="" onSubmit={handleSubmit}>
                 <h3>Overall</h3>
                 <ReportStars 
                     hovered={hoveredOverall}
                     selected={selectedOverall}
                     setHovered={setHoveredOverall}
                     setSelected={setSelectedOverall}
-                    />
+                />
                 <h3>Food</h3>
                 <ReportStars 
                     hovered={hoveredFood}
                     selected={selectedFood}
                     setHovered={setHoveredFood}
                     setSelected={setSelectedFood}
-                    />
+                />
                 <h3>Service</h3>
                 <ReportStars 
                     hovered={hoveredService}
                     selected={selectedService}
                     setHovered={setHoveredService}
                     setSelected={setSelectedService}
-                    />
+                />
                 <h3>Ambience</h3>
                 <ReportStars 
                     hovered={hoveredAmbience}
                     selected={selectedAmbience}
                     setHovered={setHoveredAmbience}
                     setSelected={setSelectedAmbience}
-                    />
-
+                />
+                <h3>Write a review</h3>
+                <h4>Help diners decide where to eat. Remember to keep it short, simple and specific.</h4>
+                <textarea name="review" id="" cols="30" rows="10"
+                    onChange={e => setReview(e.target.value) }></textarea>
+                <ul>
+                {errors.map(error => <li key={error}>{error}</li>)}
+                </ul>
+                <button className="" type="submit">Submit</button>
             </form>
         </main>
     )

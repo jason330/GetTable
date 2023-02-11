@@ -1,5 +1,16 @@
 class Api::ReportsController < ApplicationController
 
+  wrap_parameters include: [
+    'userId',
+    'restaurantId',
+    'reservationId',
+    'ratingOverall',
+    'ratingFood',
+    'ratingService',
+    'ratingAmbience',
+    'review'
+  ]
+
   before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def show  #need show?

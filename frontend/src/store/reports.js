@@ -27,7 +27,7 @@ const deleteReport = (reportId) => {
     }
 }
 
-const createReport = ({
+export const createReport = ({
     userId,
     restaurantId,
     reservationId,

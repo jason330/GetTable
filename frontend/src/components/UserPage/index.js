@@ -56,6 +56,7 @@ export default function UserPage() {
             report={report}
             restaurant={restaurant}
             reservation={reservation}
+            setShowReportForm={setShowReportForm}
             />
     }
 }
