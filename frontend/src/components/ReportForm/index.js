@@ -111,9 +111,9 @@ export default function ReportForm( {user, report, restaurant, reservation, setS
             <h1 className="reportHeader">
             {user.username ? user.username : user.email}, how was your experience at {restaurant.name}
             </h1>
-            <h2>Rate your dining experience</h2>
-            <h2>Reservation on {reservation.reservationDate}</h2>
-            <form className="" onSubmit={handleSubmit}>
+            <h2 className="reportInstruct">Rate your dining experience</h2>
+            <h2 className="reportInstruct">Reservation on {reservation.reservationDate}</h2>
+            <form className="reportForm" onSubmit={handleSubmit}>
                 <h3>Overall</h3>
                 <ReportStars 
                     hovered={hoveredOverall}
