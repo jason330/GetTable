@@ -17,6 +17,7 @@ json.reports do
                 :rating_service,
                 :rating_ambience,
                 :review
+            json.username report.user.username
         end
     end
 end

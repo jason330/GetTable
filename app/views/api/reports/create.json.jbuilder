@@ -9,3 +9,5 @@ json.extract! @report,
     :rating_service,
     :rating_ambience,
     :review
+
+json.username @report.user.username

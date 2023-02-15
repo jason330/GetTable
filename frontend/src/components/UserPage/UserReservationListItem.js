@@ -63,8 +63,11 @@ export default function UserReservationListItem( {reservation, report, showRepor
                         </div>
                     </div>
                     {report === undefined &&
-                    <div onClick={ () => {
+                    <div
+                        className="leaveReview"
+                        onClick={ () => {
                         setShowReportForm(true)
+                        window.scrollTo(0, 0)
                         setRestaurant(restaurant)
                         setReservation(reservation)
                         }} >
@@ -72,8 +75,10 @@ export default function UserReservationListItem( {reservation, report, showRepor
                     </div>
                     }
                     {report && 
-                    <div onClick={ () => setReport(report) }>
-                        See your review
+                    <div
+                        className="reviewComplete"
+                        onClick={ () => setReport(report) }>
+                        Review completed
                     </div>
                     }
                 </div>

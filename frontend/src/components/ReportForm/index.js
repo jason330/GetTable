@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { createReport } from "../../store/reports"
-import star from './star.svg'
 import './ReportForm.css'
 
 export default function ReportForm( {user, report, restaurant, reservation, setShowReportForm} ) {
@@ -152,13 +151,14 @@ export default function ReportForm( {user, report, restaurant, reservation, setS
                     />
                 </div>
                 <h3 className="reviewInstruct">Write a review</h3>
-                <h4>Help diners decide where to eat. Remember to keep it short, simple and specific.</h4>
-                <textarea name="review" id="" cols="30" rows="10"
+                <h4 className="reviewDescript">Help diners decide where to eat. Remember to keep it short, simple and specific.</h4>
+                <textarea name="review" id="" cols="30" rows="1"
+                    className="reviewText"
                     onChange={e => setReview(e.target.value) }></textarea>
                 <ul>
                 {errors.map(error => <li key={error}>{error}</li>)}
                 </ul>
-                <button className="red" type="submit">Submit</button>
+                <button className="reportButton" type="submit">Submit</button>
             </form>
 
         </div>

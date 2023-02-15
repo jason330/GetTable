@@ -5,7 +5,6 @@
 .reportComponent {
     /* display: flex;
     justify-content: center; */
-    /* max-width: 39.66667rem; */
 }
 
 .reportHeader {
@@ -44,7 +43,6 @@
 .reportRatingContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    /* row-gap: 16px; */
     align-items: center;
     /* justify-content: center; */
     margin-bottom: 16px;
@@ -56,7 +54,6 @@
     /* line-height: 20px; */
     /* margin-right: 32px; */
     padding-left: 68px;
-    /* text-align: left; */
     /* width: 5rem; */
     color: #2d333f;
 }
@@ -64,17 +61,12 @@
 .reportRatingText {
     font-size: 14px;
     font-weight: 400;
-    /* left: 100%; */
     line-height: 11px;
     margin-left: 28px;
-    /* top: 0; */
-    /* white-space: nowrap; */
 }
 
 .starContainer {
     display: flex;
-    /* height: 2rem;
-    width: 2rem; */
     cursor: pointer;
 }
 
@@ -82,14 +74,38 @@
     margin-right: 4px;
 }
 
-.starSvgPath {
-    height: 100%;
-    width: 100%;
-}
-
 .reviewInstruct {
     font-size: 1.5rem;
     /* font-weight: 700; */
     line-height: 1.75rem;
     margin-bottom: 12px;
+}
+
+.reviewDescript {
+    /* font-size: 1rem; */
+    font-weight: 400;
+    margin: 0 0 48px;
+    /* line-height: 1.5rem; */
+}
+
+.reviewText {
+    max-width: 39.66667rem;
+    width: 100%;
+    height: 12.5rem;
+    border: .0625rem solid #d8d9db;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: calc(12px + .125rem) 8px;
+    resize: none;
+}
+
+.reportButton {
+    margin: 48px;
+    padding: .75rem 16px;
+    background-color: #da3743;
+    line-height: 24px;
+}
+
+.reportButton:hover {
+    background-color: #931b23;;
 }

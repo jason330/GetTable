@@ -18,8 +18,7 @@
 
 .restaurantShowMainContainer {
     font-family: 'Lato';
-    padding: 0 32px 124px;
-    /* padding: 0 16px 16px; */
+    padding: 0 32px 92px;
     border-radius: 4px;
     display: block;
     /* box-sizing: border-box; */
@@ -73,4 +72,68 @@
     border-radius: 4px;
     box-shadow: 0 2px 4px #2d333f33;
     padding: 16px;
+}
+
+.reviewsHeader {
+    margin: 48px 0 32px;
+    padding-bottom: 16px;
+    border-bottom: .0625rem solid #d8d9db;
+    color: #2d333f;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.75rem;
+}
+
+.reportLi {
+    display: flex;
+    border-bottom: .0625rem solid #d8d9db;
+    padding-bottom: 36px;
+    margin-bottom: 32px;
+    line-height: 1.15;
+}
+
+.reportUser {
+    margin: 0 16px;
+    text-align: center;
+    width: 6rem;
+    font-size: .875rem;
+    font-weight: 501;
+}
+
+.reportDineDate {
+    margin-bottom: 8px;
+    font-size: .875rem;
+    font-weight: 501;
+    /* line-height: 1.25rem; */
+}
+
+.reportRatings {
+    display: flex;
+}
+
+.ratingCategory {
+    font-size: 14px;
+    font-weight: 700;
+    margin-right: 8px;
+}
+
+.userRating {
+    color: #da3743;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.userRating:last-of-type::after {
+    display: none;
+}
+
+.userRating::after {
+    color: #2d333f;
+    content: "\B7";
+    padding: 0 4px;
+}
+
+.reportReview {
+    margin-top: 16px;
+    line-height: 24px;
 }

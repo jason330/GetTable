@@ -21,7 +21,8 @@ function RestaurantShowPage() {
     const allReportsArray = Object.values(allReports)
 
     const restaurantReportsArray = allReportsArray.filter(report =>
-        report.restaurantId === +restaurantId )
+        report.restaurantId === +restaurantId ).sort((a, b) =>
+        new Date(b.reservationDate) - new Date(a.reservationDate))
         
     if ( restaurant === undefined ) return null;
 
@@ -46,6 +47,7 @@ function RestaurantShowPage() {
                 <div className="reservationFormContainer">
                     <ReservationForm />
                 </div>
+                <h2 className="reviewsHeader">Reviews</h2>
                 <ReportList restaurantReportsArray={restaurantReportsArray} />
             </main>
         </div>
