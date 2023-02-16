@@ -47,7 +47,7 @@ function RestaurantShowPage() {
                 <div className="reservationFormContainer">
                     <ReservationForm />
                 </div>
-                <h2 className="reviewsHeader">Reviews</h2>
+                <h2 className="reviewsHeader">{restaurantReportsArray.length} Review{restaurantReportsArray.length === 1 ? '' : 's'}</h2>
                 <ReportList restaurantReportsArray={restaurantReportsArray} />
             </main>
         </div>
