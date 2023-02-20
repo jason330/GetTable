@@ -77,8 +77,14 @@ export default function UserReservationListItem( {reservation, report, showRepor
                     {report && 
                     <div
                         className="reviewComplete"
-                        onClick={ () => setReport(report) }>
-                        Review completed
+                        onClick={ () => {
+                            setReport(report)
+                            setShowReportForm(true)
+                            window.scrollTo(0, 0)
+                            setRestaurant(restaurant)
+                            setReservation(reservation)
+                        }}>
+                        Update review
                     </div>
                     }
                 </div>

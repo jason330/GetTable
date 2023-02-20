@@ -55,7 +55,7 @@ export const createReport = ({
     return data
 }
 
-const updateReport = (reportId, {
+export const updateReport = (reportId, {
     userId,
     restaurantId,
     reservationId,

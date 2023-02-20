@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
-import { createReport } from "../../store/reports"
+import { createReport, updateReport } from "../../store/reports"
 import './ReportForm.css'
 
 export default function ReportForm( {user, report, restaurant, reservation, setShowReportForm} ) {
@@ -10,11 +10,11 @@ export default function ReportForm( {user, report, restaurant, reservation, setS
     const [hoveredService, setHoveredService] = useState()
     const [hoveredAmbience, setHoveredAmbience] = useState()
 
-    const [selectedOverall, setSelectedOverall] = useState()
-    const [selectedFood, setSelectedFood] = useState()
-    const [selectedService, setSelectedService] = useState()
-    const [selectedAmbience, setSelectedAmbience] = useState()
-    const [review, setReview] = useState('')
+    const [selectedOverall, setSelectedOverall] = useState(report.ratingOverall)
+    const [selectedFood, setSelectedFood] = useState(report.ratingFood)
+    const [selectedService, setSelectedService] = useState(report.ratingService)
+    const [selectedAmbience, setSelectedAmbience] = useState(report.ratingAmbience)
+    const [review, setReview] = useState(report.review)
 
     const dispatch = useDispatch()
     const [errors, setErrors] = useState([])
@@ -84,8 +84,12 @@ export default function ReportForm( {user, report, restaurant, reservation, setS
     const handleSubmit = ( e => {
         e.preventDefault();
 
-        if (user) {
-            setErrors([]);
+        if (!user) {
+            return setErrors( ['Please sign in or click Demo User to leave a review.'])
+        }
+        
+        setErrors([]);
+        if (!report) {
             return dispatch(createReport({
                 userId: user.id,
                 restaurantId: restaurant.id,
@@ -109,7 +113,29 @@ export default function ReportForm( {user, report, restaurant, reservation, setS
                 })                
                 .then(() => setShowReportForm(false))
         }
-        return setErrors( ['Please sign in or click Demo User to leave a review.'])
+
+        return dispatch(updateReport( report.id, {
+            userId: user.id,
+            restaurantId: restaurant.id,
+            reservationId: reservation.id,
+            ratingOverall: selectedOverall,
+            ratingFood: selectedFood,
+            ratingService: selectedService,
+            ratingAmbience: selectedAmbience,
+            review: review
+        }))
+            .catch(async (res) => {
+                let data;
+                try {
+                    data = await res.clone().json();
+                } catch {
+                    data = await res.text(); // Will hit this case if the server is down
+                }
+                if (data?.errors) setErrors(data.errors);
+                else if (data) setErrors([data]);
+                else setErrors([res.statusText]);
+            })                
+            .then(() => setShowReportForm(false))
     })
 
     return(
@@ -154,7 +180,9 @@ export default function ReportForm( {user, report, restaurant, reservation, setS
                 <h4 className="reviewDescript">Help diners decide where to eat. Remember to keep it short, simple and specific.</h4>
                 <textarea name="review" id="" cols="30" rows="1"
                     className="reviewText"
-                    onChange={e => setReview(e.target.value) }></textarea>
+                    defaultValue={report.review}
+                    onChange={e => setReview(e.target.value) }>
+                </textarea>
                 <ul>
                 {errors.map(error => <li key={error}>{error}</li>)}
                 </ul>
