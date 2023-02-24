@@ -32,7 +32,9 @@ export default function ReservationUpdatePage() {
         }
     })
 
-    if ( !reservation || !restaurant ) {
+    const user = useSelector( state => state.session.user )
+
+    if ( !user || !reservation || !restaurant ) {
         return null
     }
 

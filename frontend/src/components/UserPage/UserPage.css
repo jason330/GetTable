@@ -31,11 +31,8 @@
     border: 0.0625rem solid #d8d9db;
 }
 
-.leaveReview {
+.reviewLinks {
+    color: #da3743;
     cursor: pointer;
-    margin-top: 8px;
-}
-
-.reviewComplete {
     margin-top: 8px;
 }

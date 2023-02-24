@@ -20,14 +20,14 @@ export default function UserPage() {
         new Date(b.reservationDate) - new Date(a.reservationDate))    //need to add .filter for specific user?
 
     useEffect( () => {
-        dispatch( fetchUser(user.id) )
-    }, [dispatch, user.id])
-
+        if (user) dispatch( fetchUser(user.id) )
+    }, [dispatch, user])
+    
     const [showReportForm, setShowReportForm] = useState(false)
     const [report, setReport] = useState()
     const [restaurant, setRestaurant] = useState()
     const [reservation, setReservation] = useState()
-
+        
     if ( user === null ) {
         return(
             <h1 className="userPageUsername">Please sign in or sign up to see your dashboard.</h1>

@@ -10,11 +10,11 @@ export default function ReportForm( {user, report, restaurant, reservation, setS
     const [hoveredService, setHoveredService] = useState()
     const [hoveredAmbience, setHoveredAmbience] = useState()
 
-    const [selectedOverall, setSelectedOverall] = useState(report.ratingOverall)
-    const [selectedFood, setSelectedFood] = useState(report.ratingFood)
-    const [selectedService, setSelectedService] = useState(report.ratingService)
-    const [selectedAmbience, setSelectedAmbience] = useState(report.ratingAmbience)
-    const [review, setReview] = useState(report.review)
+    const [selectedOverall, setSelectedOverall] = useState(report ? report.ratingOverall : 0)
+    const [selectedFood, setSelectedFood] = useState(report ? report.ratingFood  : 0)
+    const [selectedService, setSelectedService] = useState(report ? report.ratingService  : 0)
+    const [selectedAmbience, setSelectedAmbience] = useState(report ? report.ratingAmbience  : 0)
+    const [review, setReview] = useState(report ? report.review  : '')
 
     const dispatch = useDispatch()
     const [errors, setErrors] = useState([])
@@ -180,7 +180,7 @@ export default function ReportForm( {user, report, restaurant, reservation, setS
                 <h4 className="reviewDescript">Help diners decide where to eat. Remember to keep it short, simple and specific.</h4>
                 <textarea name="review" id="" cols="30" rows="1"
                     className="reviewText"
-                    defaultValue={report.review}
+                    defaultValue={report ? report.review : ''}
                     onChange={e => setReview(e.target.value) }>
                 </textarea>
                 <ul>

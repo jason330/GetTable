@@ -64,7 +64,7 @@ export default function UserReservationListItem( {reservation, report, showRepor
                     </div>
                     {report === undefined &&
                     <div
-                        className="leaveReview"
+                        className="reviewLinks"
                         onClick={ () => {
                         setShowReportForm(true)
                         window.scrollTo(0, 0)
@@ -76,7 +76,7 @@ export default function UserReservationListItem( {reservation, report, showRepor
                     }
                     {report && 
                     <div
-                        className="reviewComplete"
+                        className="reviewLinks"
                         onClick={ () => {
                             setReport(report)
                             setShowReportForm(true)

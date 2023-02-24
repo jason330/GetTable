@@ -1,4 +1,5 @@
 import csrfFetch from "./csrf"
+import { REMOVE_SESSION_USER } from "./session"
 import { SET_USER } from "./user"
 
 export const GET_RESERVATION = 'reservations/getReservation' 
@@ -108,6 +109,8 @@ export default function reservationReducer( initialState = {}, action ) {
             return newState
         case SET_USER:
             return { ...initialState, ...action.payload.reservations }
+        case REMOVE_SESSION_USER:
+            return {}
         default:
             return initialState
     }
