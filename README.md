@@ -19,7 +19,7 @@ Link to the site: https://get-table.onrender.com/
 ## Setup/Installation
 1. Clone the project. Then in your terminal, `cd` into the folder.
 2. Run `bundle install`
-3. Ensure PostgreSQL is running (in Windows you can start it by running `sudo service postgresql start` in the terminal).
+3. Ensure PostgreSQL is running.
 4. Run `rails db:setup`
 5. In a new terminal, `cd` into the **frontend** folder.
 6. Run `npm install`
