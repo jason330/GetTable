@@ -83,7 +83,7 @@ export const updateReport = (reportId, {
     return data
 }
 
-const destroyReport = (reportId) => async (dispatch) => {
+export const destroyReport = (reportId) => async (dispatch) => {
     const res = await csrfFetch(`/api/reports/${reportId}`, {
         method: 'DELETE',
         body: JSON.stringify( {reportId} )

@@ -1,11 +1,13 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import greenCheck from './checkImage.svg'
 import personIcon from './personIcon.svg'
 import calendar from './calendar.svg'
 import reservComplete from './reservComplete.svg'
 import ReportForm from "../ReportForm"
+import { destroyReport } from "../../store/reports"
 
 export default function UserReservationListItem( {reservation, report, showReportForm, setShowReportForm, setReport, setRestaurant, setReservation} ) {
+    const dispatch = useDispatch()
     const restaurant = useSelector(state => state.restaurants[reservation.restaurantId])
 
     const pastReservation = new Date(reservation.reservationDate) - new Date(new Date().toLocaleDateString()) < 0
@@ -75,16 +77,23 @@ export default function UserReservationListItem( {reservation, report, showRepor
                     </div>
                     }
                     {report && 
-                    <div
-                        className="reviewLinks"
-                        onClick={ () => {
-                            setReport(report)
-                            setShowReportForm(true)
-                            window.scrollTo(0, 0)
-                            setRestaurant(restaurant)
-                            setReservation(reservation)
-                        }}>
-                        Update review
+                    <div className="reviewLinks">
+                        <div
+                            className="reservModifyLink"
+                            onClick={ () => {
+                                setReport(report)
+                                setShowReportForm(true)
+                                window.scrollTo(0, 0)
+                                setRestaurant(restaurant)
+                                setReservation(reservation)
+                            }}>
+                            Update review
+                        </div>
+                        <div
+                            onClick={ () => dispatch( destroyReport(report.id) )}>
+                            Delete review
+                        </div>
+
                     </div>
                     }
                 </div>

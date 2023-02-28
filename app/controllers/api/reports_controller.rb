@@ -47,7 +47,7 @@ class Api::ReportsController < ApplicationController
     @report = Report.find(params[:id])
 
     if @report.destroy
-      return @report
+      render json: @report.id
     end
     
   end
