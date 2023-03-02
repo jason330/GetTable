@@ -90,7 +90,10 @@ export default function UserReservationListItem( {reservation, report, showRepor
                             Update review
                         </div>
                         <div
-                            onClick={ () => dispatch( destroyReport(report.id) )}>
+                            onClick={ () => {
+                                dispatch( destroyReport(report.id) )
+                                setReport()
+                            }}>
                             Delete review
                         </div>
 
