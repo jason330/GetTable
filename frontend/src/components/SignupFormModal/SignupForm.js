@@ -40,9 +40,6 @@ function SignupForm() {
             <h3 className="modalMsg">Enter the email associated with your social login or new email.
             </h3>
             <form onSubmit={handleSubmit}>
-                <ul>
-                    {errors.map(error => <li key={error}>{error}</li>)}
-                </ul>
                 <input
                     className="inputField"
                     type="email"
@@ -70,6 +67,9 @@ function SignupForm() {
                     required
                 />
                 <button className="formSubmitButton red" type="submit">Continue</button>
+                <ul className="signUpErrors">
+                    {errors.map(error => <li key={error}>{error}</li>)}
+                </ul>
             </form>
         </>
     );

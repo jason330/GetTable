@@ -17,6 +17,13 @@ function RestaurantIndexPage() {
         <>
             <section className="mainTextContainer">
                 <h1 className="sectionText">Find your table for any occasion</h1>
+                {/* <form >
+                    <input
+                        type="search"
+                        required
+                        placeholder="Location, Restaurant, or Cuisine"
+                        />
+                </form> */}
             </section>
             <section className="restaurantsMainContainer">
                 <div className="restaurantsMainSubContainer">
