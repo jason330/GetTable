@@ -26,6 +26,13 @@ export const fetchRestaurants = () => async (dispatch) => {
     return res
 }
 
+export const searchRestaurants = (query) => async (dispatch) => {
+    const res = await csrfFetch('/api/restaurants/search')
+    const data = await res.json();
+    dispatch(setRestaurants(data))
+    return res
+}
+
 export const fetchRestaurant = (restaurantId) => async (dispatch) => {
     const res = await csrfFetch(`/api/restaurants/${restaurantId}`)
     const data = await res.json();
