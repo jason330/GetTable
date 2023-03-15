@@ -38,7 +38,10 @@ function RestaurantIndexPage() {
         <>
             <section className="mainTextContainer">
                 <h1 className="sectionText">Find your table for any occasion</h1>
-                {/* <form onSubmit={handleSubmit} >
+                {/* <form
+                    role='search' 
+                    onSubmit={handleSubmit}
+                >
                     <input
                         type="search"
                         required
