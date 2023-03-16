@@ -38,19 +38,21 @@ function RestaurantIndexPage() {
         <>
             <section className="mainTextContainer">
                 <h1 className="sectionText">Find your table for any occasion</h1>
-                {/* <form
+                <form
+                    className='searchForm'
                     role='search' 
                     onSubmit={handleSubmit}
                 >
                     <input
                         type="search"
                         required
+                        className='search'
                         placeholder="Location, Restaurant, or Cuisine"
                         value={query}
                         onChange={e => setQuery(e.target.value)}
                         />
                     <button type="submit">Let's go</button>
-                </form> */}
+                </form>
             </section>
             <section className="restaurantsMainContainer">
                 <div className="restaurantsMainSubContainer">

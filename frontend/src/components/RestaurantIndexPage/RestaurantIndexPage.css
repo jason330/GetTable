@@ -12,9 +12,20 @@
     font-size: 45px;
     font-weight: 700;
     /* line-height: 56px; */
-    /* margin: 0 0 16px; */
+    margin: 0 0 16px;
     position: absolute;
     top: 150px
+}
+
+.searchForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search {
+    background-color: #f7f7f7;
+    color: #2d333f;
 }
 
 .restaurantsMainContainer {
