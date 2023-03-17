@@ -4,7 +4,15 @@
     height: 248px;
     font-family: 'Lato';
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+}
+
+.searchContainer {
+    padding: 64px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - 32px);
 }
 
 .sectionText {
@@ -13,19 +21,25 @@
     font-weight: 700;
     /* line-height: 56px; */
     margin: 0 0 16px;
-    position: absolute;
+
+    /* position: absolute; */
     top: 150px
 }
 
 .searchForm {
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
+    /* box-sizing: border-box; */
 }
 
 .search {
     background-color: #f7f7f7;
     color: #2d333f;
+    border-radius: 4px;
+    height: 3rem;
+    margin: 0 16px;
+    min-width: 18.125rem;
 }
 
 .restaurantsMainContainer {

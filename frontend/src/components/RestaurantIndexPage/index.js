@@ -37,22 +37,24 @@ function RestaurantIndexPage() {
     return(
         <>
             <section className="mainTextContainer">
-                <h1 className="sectionText">Find your table for any occasion</h1>
-                <form
-                    className='searchForm'
-                    role='search' 
-                    onSubmit={handleSubmit}
-                >
-                    <input
-                        type="search"
-                        required
-                        className='search'
-                        placeholder="Location, Restaurant, or Cuisine"
-                        value={query}
-                        onChange={e => setQuery(e.target.value)}
-                        />
-                    <button type="submit">Let's go</button>
-                </form>
+                <div className='searchContainer'>
+                    <h1 className="sectionText">Find your table for any occasion</h1>
+                    <form
+                        className='searchForm'
+                        role='search' 
+                        onSubmit={handleSubmit}
+                    >
+                        <input
+                            type="search"
+                            required
+                            className='search'
+                            placeholder="Location, Restaurant, or Cuisine"
+                            value={query}
+                            onChange={e => setQuery(e.target.value)}
+                            />
+                        <button type="submit">Let's go</button>
+                    </form>
+                </div>
             </section>
             <section className="restaurantsMainContainer">
                 <div className="restaurantsMainSubContainer">
