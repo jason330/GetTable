@@ -13,18 +13,18 @@ class Api::RestaurantsController < ApplicationController
   def search
     # puts 'params is ',params
     
-    query = "%" + Restaurant.sanitize_sql_like( params[:q] ) + "%"
+    @query = "%" + Restaurant.sanitize_sql_like( params[:q] ) + "%"
     # puts 'query is ',query
 
     @restaurants = Restaurant.where(
       "name LIKE ? OR location LIKE ? OR cuisine LIKE ?",
-      query,
-      query,
-      query
+      @query.downcase,
+      @query.downcase,
+      @query.downcase
       )
     # puts '@restaurants is', @restaurants
-
-    render :index
+    # puts '@query. class is ',@query.class
+    render :search
   end
   
 end

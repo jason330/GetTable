@@ -54,6 +54,18 @@
     font-weight: 501;
 }
 
+.searchForm button {
+    background-color: #da3743;
+    text-align: center;
+    min-width: 9rem;
+    font-weight: 700;
+    transition: all 0.3s ease-out;
+}
+
+.searchForm button:hover {
+    background-color: #b8222d;
+}
+
 .restaurantsMainContainer {
     display: flex;
     justify-content: center;

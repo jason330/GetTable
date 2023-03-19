@@ -2,7 +2,7 @@ import csrfFetch from "./csrf";
 import { GET_RESERVATION } from "./reservations";
 import { SET_USER } from "./user";
 
-const SET_RESTAURANTS = 'restaurants/setRestaurants'
+export const SET_RESTAURANTS = 'restaurants/setRestaurants'
 export const SET_RESTAURANT = 'restaurants/setRestaurant'
 
 const setRestaurants = ( restaurants ) => {
@@ -43,7 +43,7 @@ export const fetchRestaurant = (restaurantId) => async (dispatch) => {
 export default function restaurantReducer( initialState = {}, action ) {
     switch (action.type) {
         case SET_RESTAURANTS:
-            return action.payload;
+            return action.payload.restaurants ? action.payload.restaurants : null;
         case SET_RESTAURANT:            
             return { ...initialState, [action.payload.restaurant.id]: action.payload.restaurant}
         case GET_RESERVATION:

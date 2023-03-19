@@ -3,6 +3,7 @@ import thunk from 'redux-thunk'
 import reportReducer from './reports';
 import reservationReducer from './reservations';
 import restaurantReducer from './restaurants';
+import searchReducer from './search';
 import sessionReducer from './session';
 import userReducer from './user';
 
@@ -11,7 +12,8 @@ const rootReducer = combineReducers({
     restaurants: restaurantReducer,
     reservations: reservationReducer,
     user: userReducer,
-    reports: reportReducer
+    reports: reportReducer,
+    search: searchReducer
 })
 
 let enhancer;
