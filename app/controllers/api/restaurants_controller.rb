@@ -17,7 +17,7 @@ class Api::RestaurantsController < ApplicationController
     # puts 'query is ',query
 
     @restaurants = Restaurant.where(
-      "name LIKE ? OR location LIKE ? OR cuisine LIKE ?",
+      "lower(name) LIKE ? OR lower(location) LIKE ? OR lower(cuisine) LIKE ?",
       @query.downcase,
       @query.downcase,
       @query.downcase
