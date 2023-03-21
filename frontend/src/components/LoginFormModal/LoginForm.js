@@ -37,9 +37,6 @@ function LoginForm() {
                 <h3 className="modalMsg">Enter the email associated with your GetTable account or social login.
                 </h3>
                 <form onSubmit={handleSubmit}>
-                    <ul>
-                        {errors.map(error => <li key={error}>{error}</li>)}
-                    </ul>
                     <input
                         className="inputField"
                         type="email"
@@ -48,7 +45,6 @@ function LoginForm() {
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-
                     <input
                         className="inputField"
                         type="password"
@@ -58,6 +54,9 @@ function LoginForm() {
                         required
                     />
                     <button className="formSubmitButton red" type="submit">Continue</button>
+                    <ul>
+                        {errors.map(error => <li key={error}>{error}</li>)}
+                    </ul>
                 </form>
             </div>
         </>

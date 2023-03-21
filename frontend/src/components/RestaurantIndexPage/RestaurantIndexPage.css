@@ -143,6 +143,10 @@
     transform: translateY(-6px);
 }
 
+/* .restaurantIndexContainer:hover .restaurantIndexImg {
+    transform: scale(1.05);
+} */
+
 .restaurantIndexImg {
     min-height: 132px;
     width: 100%;

@@ -20,6 +20,13 @@
     /* padding: 48px 32px; */
 }
 
+.modalFormContainer ul, .signUpErrors {
+    margin-top: 12px;
+    color: #931b23;
+    font-size: 14px;
+    font-weight: 501;
+}
+
 .enterEmail {
     font-family: 'Lato';
     margin: 0px 0px 4px;
@@ -60,10 +67,4 @@ form {
     font-weight: 700;
     text-align: center;
     width: 100%;
-}
-
-.signUpErrors {
-    color: #da3743;
-    font-weight: 700;
-    margin-top: 12px;
 }

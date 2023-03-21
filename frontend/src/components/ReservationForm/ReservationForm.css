@@ -12,6 +12,12 @@
     margin-top: 16px;
 }
 
+.reservForm ul {
+    color: #931b23;
+    font-size: 14px;
+    font-weight: 501;
+}
+
 .partySizeContainer {
     display: flex;
     flex-direction: column;
@@ -40,9 +46,9 @@
     font-size: 14px;
 }
 
-.reservationFormDateTimeContainer {
-    /* display: flex; */
-}
+/* .reservationFormDateTimeContainer {
+    display: flex;
+} */
 
 .reservFormDate {
     width: 50%;
@@ -67,8 +73,10 @@
 
 .reservFormButton {
     background-color: #da3743;
+    font-weight: 600;
     height: 3rem;
     width: 100%;
     margin-top: 16px;
+    margin-bottom: 12px;
     text-align: center;
 }
