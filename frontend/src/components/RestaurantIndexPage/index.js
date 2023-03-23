@@ -68,7 +68,7 @@ function RestaurantIndexPage() {
                         <h2 className="restaurantsArrayTitle">{priorSearch ? `Results for "${priorSearch}"` : 'Popular restaurants'} in the San Francisco Bay Area</h2>
                     }
                     {!allRestaurants &&
-                        <h2 className="restaurantsArrayTitle">{priorSearch ? `Sorry, no results for "${priorSearch}"` : 'Popular restaurants'} in the San Francisco Bay Area</h2>
+                        <h2 className="restaurantsArrayTitle">{priorSearch ? `Sorry, we couldn't find any results for "${priorSearch}"` : 'Popular restaurants'} in the San Francisco Bay Area</h2>
                     }
                     </div>
                     <div>

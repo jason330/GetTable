@@ -5,7 +5,7 @@ GetTable is a clone of OpenTable, a site where users can find information about 
 Link to the site: https://get-table.onrender.com/
 
 ## Screenshot:
-![Home page screen shot](GTss.jpg)
+![Home page screen shot](GTs.jpg)
 
 ## Technologies used
 
@@ -45,4 +45,4 @@ The `getReservation` action is then dispatched, and both the `reservationReducer
 
 ## Future Features
 
-- Search based on location, restaurant, or cuisine
+- UI and UX improvements
