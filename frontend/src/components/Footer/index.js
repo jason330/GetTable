@@ -10,8 +10,8 @@ export default function Footer() {
                 <a
                 className='footerLink'
                 target='_blank'
-                href="https://github.com/jason330">
-                    <img className='footerImg' src={github} alt="github" />
+                href="https://github.com/jason330/GetTable">
+                    <img className='footerImg' src={github} alt="github repository" />
                 </a>
                 <a
                 className='footerLink'
