@@ -56,29 +56,15 @@ export default function ReportForm( {user, report, restaurant, reservation, setS
                     key={rating}
                     alt={`${rating} out of 5 stars`}
                     ><path 
-                    // className="starSvgPath"
                     d="M3.213 15.984c-.063 0-.104-.01-.125-.031-.104-.063-.136-.136-.094-.219l.876-5.516L.083 6.331C0 6.247-.021 6.164.021 6.08c.021-.063.083-.115.188-.157l5.256-.783L7.781.125C7.864.042 7.937 0 8 0c.104 0 .177.042.219.125l2.347 5.015 5.226.784a.282.282 0 0 1 .188.157c.041.083.02.166-.063.25l-3.786 3.886.907 5.516a.297.297 0 0 1-.094.219c-.104.063-.188.063-.25 0L8 13.383l-4.662 2.57c-.021.021-.063.031-.125.031z"
                     fill={numRedStars >= rating ? '#da3743' : "#E1E1E1"} />
                     </svg>
-
-                    // <img
-                    //     src={star}
-                    //     onMouseEnter={ () => setHoveredStar(rating) }
-                    //     onMouseLeave={ () => setHoveredStar() }
-                    //     onClick={ () => setSelectedStar(rating) }
-                    //     className={numRedStars >= rating ? 'redStar' : numRedStars.toString()}
-                    //     key={rating}
-                    //     alt={`${rating}`} />
                     )
                 }
                 </div>
                 <h4 className="reportRatingText">{ratingText[numRedStars]}</h4>
             </>
         )
-        // for (let i of numStars) {
-        //     <img src="" alt="" />
-
-        // }
     }
 
     const handleSubmit = ( e => {
